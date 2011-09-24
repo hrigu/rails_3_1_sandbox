@@ -1,0 +1,7 @@
+Fri, 23 Sep 2011 06:41:32 +0200
+doc/README_FOR_APP	Thu, 22 Sep 2011 21:39:46 +0200
+app/controllers/application_controller.rb	Thu, 22 Sep 2011 21:39:46 +0200
+app/controllers/posts_controller.rb	Thu, 22 Sep 2011 22:18:29 +0200
+app/helpers/application_helper.rb	Thu, 22 Sep 2011 21:39:46 +0200
+app/helpers/posts_helper.rb	Thu, 22 Sep 2011 22:18:29 +0200
+app/models/post.rb	Thu, 22 Sep 2011 22:18:29 +0200
