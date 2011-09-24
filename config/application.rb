@@ -44,5 +44,14 @@ module Rails31Sandbox
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.form_builder :simple_form
+      g.template_engine :haml
+    end
+
+
   end
 end

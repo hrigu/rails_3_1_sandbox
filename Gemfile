@@ -17,6 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "haml-rails"
+gem "simple_form"
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,0 +1,15 @@
+= simple_form_for @post do |form|
+
+  -if @post.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this #{Post.name.titleize} from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg  
+
+  = form.input :title, :label => 'Title'
+  = form.input :body, :label => 'Body'
+  = form.input :published, :label => 'Published'
+
+  .actions
+    = form.button :submit
