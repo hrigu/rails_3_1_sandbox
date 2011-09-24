@@ -192,7 +192,7 @@ DEPENDENCIES
   mocha
   rails (= 3.1.0)
   rails3-generators
-  rspec-rails
+  rspec-rails (~> 2.4)
   sass-rails (~> 3.1.0)
   simple_form
   sqlite3

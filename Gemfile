@@ -34,10 +34,14 @@ group :test do
   gem 'turn', :require => false
   gem 'database_cleaner'
   gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'mocha'
+end
+
+#to enable the rake tasks, rspec-rails must be in the development group: see https://www.relishapp.com/rspec/rspec-rails and https://github.com/rspec/rspec-rails/issues/438
+group :test, :development do
+  gem 'rspec-rails', "~> 2.4"
 end
 
 # for javascript engine
