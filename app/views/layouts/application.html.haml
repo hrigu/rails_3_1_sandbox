@@ -1,0 +1,9 @@
+%html
+  %head
+    %title
+      = "hi" #yield(:title) || "Untitled"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
+    = stylesheet_link_tag :application
+  %body
+    #main
+      = yield
