@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :post do
-      title "MyString"
-      body "MyText"
+      title "firstPost"
+      body "It's nice'"
       published false
     end
 end
