@@ -14,7 +14,9 @@
       %td= post.title
       %td= post.body
       %td= post.published
-      %td= link_to 'Show', post
+
+      %td
+        = link_to 'Show', post, {:id => "show_#{post.title}"}
       %td= link_to 'Edit', edit_post_path(post)
       %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
 
