@@ -9,6 +9,6 @@ end
 
 Then /^I see the home$/ do
   puts page.class.name
-  page.should have_content("hi")
+  page.should have_content("Home")
 
 end

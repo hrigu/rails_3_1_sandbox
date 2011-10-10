@@ -4,7 +4,13 @@
 #notice
   Mastermind
 
+= form_for :game, {url: mastermind_new_game_path }do |f|
+  = f.label :master
+  = f.text_field :master
+  %br
+  = f.label :solver
+  = f.text_field :solver
 
+  = f.submit "choose"
 
-= link_to "Mastermind", mastermind_path
 
