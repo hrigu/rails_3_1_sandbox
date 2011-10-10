@@ -13,6 +13,7 @@ class Game
     puts sym
     p *args
     p &block
+    super
   end
 
 end

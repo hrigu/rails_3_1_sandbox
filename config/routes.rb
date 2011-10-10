@@ -3,7 +3,7 @@ Rails31Sandbox::Application.routes.draw do
   root to:'home#index'
 
   match 'mastermind' => 'mastermind#index'
-  match 'mastermind/new_game' => 'mastermind#new_game'
+  match 'mastermind/start_game' => 'mastermind#start_game'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
