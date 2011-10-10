@@ -1,0 +1,9 @@
+
+
+a = nil
+a = "nil"
+
+b = a ||= "not_nil"
+
+puts b
+

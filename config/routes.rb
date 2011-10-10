@@ -1,6 +1,9 @@
 Rails31Sandbox::Application.routes.draw do
   resources :posts
   root to:'home#index'
+
+  match 'mastermind' => 'mastermind#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

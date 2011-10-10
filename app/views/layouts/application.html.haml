@@ -1,9 +1,9 @@
 %html
   %head
     %title
-      = "hi" #yield(:title) || "Untitled"
+      = yield(:title) || "Rails 3.1 Sandbox"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag :application
   %body
     #main
-      = yield
+      = yield  #the content from the view comes in (see 3.2 Understanding yield in doc/guides/layouts_and_rendering.html)
