@@ -1,0 +1,22 @@
+- content_for :title do
+  New Game
+
+#notice
+  %br
+
+  - @game.mastermind.guesses.each do |guess|
+    = guess
+    %br
+
+  %br
+  = form_for :guess, {url: mastermind_guess_path }do |f|
+    = f.label :guess
+    - @game.size_of_code.times do |s|
+      = f.text_field(s.to_s, {size: 1})
+    %br
+    = f.submit "do"
+
+- if @game.solved
+  SOLVED!
+  %br
+  = @game.mastermind.code

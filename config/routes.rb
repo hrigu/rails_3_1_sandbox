@@ -4,6 +4,7 @@ Rails31Sandbox::Application.routes.draw do
 
   match 'mastermind' => 'mastermind#index'
   match 'mastermind/start_game' => 'mastermind#start_game'
+  match 'mastermind/guess' => 'mastermind#guess'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -15,9 +15,20 @@ class MastermindController < ApplicationController
     @game.start
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render "play_game"}
       format.json { render json: @posts }
     end
+  end
+
+  def guess
+    @game = session[:game]
+
+    @game.guess params[:guess]
+    respond_to do |format|
+      format.html {render "play_game"}
+      format.json { render json: @posts }
+    end
+
   end
 
 
