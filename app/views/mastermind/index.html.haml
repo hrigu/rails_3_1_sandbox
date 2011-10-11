@@ -4,13 +4,20 @@
 #notice
   Mastermind
 
+- # the f is a FormBuilder object
 = form_for :game, {url: mastermind_start_game_path }do |f|
   = f.label :master
-  = f.text_field :master
+  = f.select :master, %w[Computer Human]
   %br
   = f.label :solver
-  = f.text_field :solver
-
+  = f.select :solver, %w[Computer Human]
+  %br
+  = f.label :size_of_code
+  = f.select :size_of_code, %w[1 2 3 4]
+  %br
+  = f.label :num_of_colors
+  = f.select :num_of_colors, %w[1 2 3 4 5 6 7 8]
+  %br
   = f.submit "choose"
 
 
