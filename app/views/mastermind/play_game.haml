@@ -1,6 +1,10 @@
 - content_for :title do
   New Game
 
+#colors
+  - @game.colors.each do |color|
+    .cell{class: color}
+      = color
 #notice
   %br
 
@@ -20,3 +24,6 @@
   SOLVED!
   %br
   = @game.mastermind.code
+
+
+#log

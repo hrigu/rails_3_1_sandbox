@@ -1,6 +1,6 @@
 class Game
   attr_accessor :master, :solver, :size_of_code, :num_of_colors
-  attr_reader :mastermind, :solved #, :solver
+  attr_reader :mastermind, :solved, :colors #, :solver
 
 
   def initialize options = {master: "Computer", solver: "Human", size_of_code: "4", num_of_colors: "6"}
@@ -10,8 +10,8 @@ class Game
   end
 
   def start
-    colors = %w[a b c d e f g h][0, num_of_colors]
-    @mastermind = Mastermind.new colors, size_of_code
+    @colors = %w[green yellow blue red magenta black white orange][0, num_of_colors]
+    @mastermind = Mastermind.new @colors, size_of_code
     #@solver = Solver.new colors, size_of_code
   end
 

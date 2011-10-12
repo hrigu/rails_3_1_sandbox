@@ -4,6 +4,7 @@
       = yield(:title) || "Rails 3.1 Sandbox"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag :application
+    = javascript_include_tag :application
   %body
     #main
       = yield  #the content from the view comes in (see 3.2 Understanding yield in doc/guides/layouts_and_rendering.html)
