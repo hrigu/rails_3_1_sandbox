@@ -5,6 +5,7 @@ div.bank {
     div.cell {
         float: left;
         text-align: center;
+        height: 20px;
         width: 20px;
         padding:2px;
         margin: 2px;
@@ -23,4 +24,16 @@ div.bank {
         border-color: black;
         border-width: thin;
     }
+    div.space {
+        float: left;
+        text-align: center;
+        height: 8px;
+        width: 10px;
+    }
+    div.drophover{
+        background-color:pink
+    }
+
+
+
 }
