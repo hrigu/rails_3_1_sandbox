@@ -23,10 +23,10 @@ class MastermindController < ApplicationController
   def guess
     @game = session[:game]
 
-    @game.guess params[:guess]
+    @game.guess params[:guess] if params[:guess]
+    String next_page = @game.solved ? "game_solved" : "play_game"
     respond_to do |format|
-      format.html {render "play_game"}
-      format.json { render json: @posts }
+      format.html {render next_page}
     end
 
   end

@@ -1,5 +1,5 @@
 - content_for :title do
-  Mastermind
+  Mastermind - play
 
 #notice
   Mastermind
@@ -7,17 +7,15 @@
 - # the f is a FormBuilder object
 = form_for :game, {url: mastermind_start_game_path }do |f|
   = f.label :master
-  = f.select :master, %w[Computer Human]
+  = f.select :master, %w[Computer Human], selected: "Computer"
   %br
   = f.label :solver
-  = f.select :solver, %w[Computer Human]
+  = f.select :solver, %w[Computer Human], selected: "Human"
   %br
   = f.label :size_of_code
-  = f.select :size_of_code, %w[1 2 3 4]
+  = f.select :size_of_code, %w[1 2 3 4 5 6], selected: "4"
   %br
   = f.label :num_of_colors
-  = f.select :num_of_colors, %w[1 2 3 4 5 6 7 8]
+  = f.select :num_of_colors, %w[1 2 3 4 5 6 7 8], selected: "6"
   %br
   = f.submit "choose"
-
-

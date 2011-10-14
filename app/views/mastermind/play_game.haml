@@ -1,29 +1,30 @@
 - content_for :title do
   New Game
 
-#colors
-  - @game.colors.each do |color|
-    .cell{class: color}
-      = color
-#notice
+%br
+- @game.mastermind.guesses.each do |guess|
+  .bank
+    - guess.code.each do |color|
+      .cell{style: "background: #{color}"}
+        x
+    - guess.num_of_blacks.times do
+      .tinycell{style: "background: black"}
+    - guess.num_of_whites.times do
+      .tinycell{style: "background: white"}
+%br
+%br
+
+
+= form_for :guess, {url: mastermind_guess_path }do |f|
+  .bank
+    - @game.colors.each do |color|
+      .cell.draggable{id: color, style: "background: #{color}"}
+        x
+  .bank
+    - @game.size_of_code.times do |i|
+      .target.cell{id: "pos_#{i}"}
+        x
+  - @game.size_of_code.times do |s|
+    = f.hidden_field(s.to_s, {size: 1})
   %br
-
-  - @game.mastermind.guesses.each do |guess|
-    = guess
-    %br
-
-  %br
-  = form_for :guess, {url: mastermind_guess_path }do |f|
-    = f.label :guess
-    - @game.size_of_code.times do |s|
-      = f.text_field(s.to_s, {size: 1})
-    %br
-    = f.submit "do"
-
-- if @game.solved
-  SOLVED!
-  %br
-  = @game.mastermind.code
-
-
-#log
+  = f.submit "guess"

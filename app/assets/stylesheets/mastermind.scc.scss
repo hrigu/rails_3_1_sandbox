@@ -1,0 +1,26 @@
+div.bank {
+    width:450px;
+    height:30px;
+
+    div.cell {
+        float: left;
+        text-align: center;
+        width: 20px;
+        padding:2px;
+        margin: 2px;
+        border-style: solid;
+        border-color: black;
+        border-width: thin;
+    }
+    div.tinycell {
+        float: left;
+        text-align: center;
+        height: 8px;
+        width: 8px;
+        padding:1px;
+        margin: 1px;
+        border-style: solid;
+        border-color: black;
+        border-width: thin;
+    }
+}
