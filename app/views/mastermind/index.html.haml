@@ -7,10 +7,10 @@
 - # the f is a FormBuilder object
 = form_for :game, {url: mastermind_start_game_path }do |f|
   = f.label :master
-  = f.select :master, %w[Computer Human], selected: "Computer"
+  = f.select :master, @game_configuration.player_values, {selected: @game_configuration.master}, {class: "player"}
   %br
   = f.label :solver
-  = f.select :solver, %w[Computer Human], selected: "Human"
+  = f.select :solver,  @game_configuration.player_values, {selected: @game_configuration.solver}, {class: "player"}
   %br
   = f.label :size_of_code
   = f.select :size_of_code, %w[1 2 3 4 5 6], selected: "4"

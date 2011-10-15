@@ -1,5 +1,6 @@
 class MastermindController < ApplicationController
   def index
+    @game_configuration = GameConfiguration.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

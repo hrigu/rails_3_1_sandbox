@@ -62,7 +62,7 @@ $(document).ready(function() {
 //    });
 
 
-    $('select').change(function() {
+    $('select.player').change(function() {
         var who = $(this);
         var val = $(this).val();
   //      alert(val);
