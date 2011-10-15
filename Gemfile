@@ -5,7 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'jquery-rails'
 gem "haml-rails"
 gem "simple_form"
@@ -31,6 +30,17 @@ end
 # gem 'ruby-debug-base19x'
 # gem 'ruby-debug-ide19'
 
+group :production do
+  gem 'pg'  #for heroku
+end
+
+#to enable the rake tasks, rspec-rails must be in the development group: see https://www.relishapp.com/rspec/rspec-rails and https://github.com/rspec/rspec-rails/issues/438
+group :test, :development do
+  gem 'sqlite3'
+  gem 'rspec-rails', "~> 2.4"
+  gem 'rcov'
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
@@ -42,11 +52,6 @@ group :test do
   gem 'mocha'
 end
 
-#to enable the rake tasks, rspec-rails must be in the development group: see https://www.relishapp.com/rspec/rspec-rails and https://github.com/rspec/rspec-rails/issues/438
-group :test, :development do
-  gem 'rspec-rails', "~> 2.4"
-  gem 'rcov'
-end
 
   # for javascript engine
 gem 'execjs'
