@@ -1,23 +1,21 @@
 class MastermindController < ApplicationController
   def index
-    @game_configuration = GameConfiguration.new
+    @game = session[:game] ||= Game.new
+    session[:game] = @game
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
     end
   end
 
   def start_game
-    if params[:game]
-      game = Game.new params[:game]
-      session[:game] = game
-    end
     @game = session[:game]
+    if params[:game]
+      @game.properties= (params[:game])
+    end
     @game.start
 
     respond_to do |format|
       format.html {render "play_game"}
-      format.json { render json: @posts }
     end
   end
 
