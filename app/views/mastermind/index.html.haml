@@ -5,16 +5,16 @@
   Mastermind
 - # the f is a FormBuilder object
 = form_for :game, {url: mastermind_start_game_path }do |f|
-  = f.label :master
+  = f.label :master, "Master:"
   = f.select :master, @game.player_values, {selected: @game.master}, {class: "player"}
   %br
-  = f.label :solver
+  = f.label :solver, "Codeknacker:"
   = f.select :solver,  @game.player_values, {selected: @game.solver}, {class: "player"}
   %br
-  = f.label :size_of_code
+  = f.label :size_of_code, "Codelänge:"
   = f.select :size_of_code, @game.color_sizes, {selected: @game.size_of_code}
   %br
-  = f.label :num_of_colors
+  = f.label :num_of_colors, "Anzahl Farben:"
   = f.select :num_of_colors, @game.color_sizes, {selected: @game.num_of_colors}
   %br
-  = f.submit "choose"
+  = f.submit "weiter"
