@@ -1,7 +1,12 @@
+$game_instances ||= {}
+$game_next_id  ||=0;
+
 class Game
   attr_reader :player_values, :code_sizes, :color_sizes
   attr_accessor :master, :solver, :size_of_code, :num_of_colors
   attr_reader :mastermind, :solved, :colors #, :solver
+  attr_reader :id
+
 
   def initialize
     @player_values = %w[Computer Mensch]
@@ -11,6 +16,11 @@ class Game
     @color_sizes = %w[1 2 3 4 5 6 7 8]
     @size_of_code = @code_sizes[3].to_i
     @num_of_colors = @color_sizes[5].to_i
+
+    @id = $game_next_id
+    $game_instances[@id] = self
+
+    $game_next_id += 1
   end
 
   def properties= options = {master: "Computer", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
@@ -26,10 +36,15 @@ class Game
   end
 
   def guess args
-    puts "ARRGS: #{args}"
     guess = Array.new size_of_code
-    args.each_pair {|key, value| guess[key.to_i] = value }
+    args.each_pair { |key, value| guess[key.to_i] = value }
     puts "GUESSSS#{guess.to_s}"
     @solved = mastermind.guess guess
   end
+
+  def self.find id
+    $game_instances[id]
+  end
+
+
 end
