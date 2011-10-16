@@ -1,3 +1,18 @@
+div.master {
+    height:50px;
+}
+
+div.left {
+    float: left;
+    width: 130px;
+    height:30px;
+}
+
+div.right{
+    width: 200px;
+    height:30px;
+}
+
 div.bank {
     width:450px;
     height:30px;
@@ -19,7 +34,8 @@ div.bank {
         height: 8px;
         width: 8px;
         padding:1px;
-        margin: 1px;
+        margin-top: 9px;
+        margin-left: 3px;
         border-style: solid;
         border-color: black;
         border-width: thin;
@@ -35,7 +51,7 @@ div.bank {
     }
 }
 div.big{
+    margin-top: 20px;
     font-size: large;
     color: red;
-    padding:20px;
 }

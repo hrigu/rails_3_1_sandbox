@@ -1,15 +1,19 @@
 - content_for :title do
   Mastermind - play...
-
-= render "board"
-= form_for :guess, {url: mastermind_guess_path }do |f|
-  .bank
-    - @game.size_of_code.times do |i|
-      .cell.target{id: "pos_#{i}"}
-    .space
-    - @game.colors.each do |color|
-      .cell.draggable{style: "background-color: #{color}", color: color}
-  - @game.size_of_code.times do |s|
-    = f.hidden_field(s.to_s, {size: 1})
-  %br
-  = f.submit "guess"
+.master
+  = render partial: "code", locals: {hidden: true}
+.solver
+  = render "board"
+  .left
+    Neuer Versuch:
+  .right
+    = form_for :guess, {url: mastermind_guess_path }do |f|
+      .bank
+        - @game.size_of_code.times do |i|
+          .cell.target{id: "pos_#{i}"}
+        .space
+        - @game.colors.each do |color|
+          .cell.draggable{style: "background-color: #{color}", color: color}
+      - @game.size_of_code.times do |s|
+        = f.hidden_field(s.to_s, {size: 1})
+      = f.submit "geknackt?"

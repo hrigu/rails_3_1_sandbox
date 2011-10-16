@@ -1,10 +1,15 @@
 - content_for :title do
   Mastermind - solved
-
-=render "board"
-
-.big
-  SOLVED!
-
-%br
-= link_to "new game", mastermind_path
+.master
+  = render partial: "code", locals: {hidden: false}
+.solver
+  = render "board"
+.left
+  &nbsp;
+.right
+  .big
+    Bravo!
+.left
+  &nbsp;
+.right
+  = link_to "new game", mastermind_path

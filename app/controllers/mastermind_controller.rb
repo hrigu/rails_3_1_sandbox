@@ -31,8 +31,5 @@ class MastermindController < ApplicationController
     respond_to do |format|
       format.html { render next_page }
     end
-
   end
-
-
 end

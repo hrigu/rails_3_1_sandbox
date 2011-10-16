@@ -1,0 +1,7 @@
+.left
+  Versteckter Code:
+.right
+  .bank
+    - @game.mastermind.code.each do |color|
+      - color = hidden ? "gray" : color
+      .cell{style: "background: #{color}"}
