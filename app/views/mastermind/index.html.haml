@@ -3,18 +3,22 @@
 
 #notice
   Mastermind
-- # the f is a FormBuilder object
-= form_for :game, {url: mastermind_start_game_path }do |f|
-  = f.label :master, "Master:"
-  = f.select :master, @game.player_values, {selected: @game.master}, {class: "player"}
-  %br
-  = f.label :solver, "Codeknacker:"
-  = f.select :solver,  @game.player_values, {selected: @game.solver}, {class: "player"}
-  %br
-  = f.label :size_of_code, "Codelänge:"
-  = f.select :size_of_code, @game.color_sizes, {selected: @game.size_of_code}
-  %br
-  = f.label :num_of_colors, "Anzahl Farben:"
-  = f.select :num_of_colors, @game.color_sizes, {selected: @game.num_of_colors}
-  %br
-  = f.submit "weiter"
+
+%table
+  - # the f is a FormBuilder object
+  = form_for :game, {url: mastermind_start_game_path }do |f|
+    %tr
+      %td= f.label :master, "Master:"
+      %td= f.select :master, @game.player_values, {selected: @game.master}, {class: "player"}
+    %tr
+      %td= f.label :solver, "Codeknacker:"
+      %td= f.select :solver,  @game.player_values, {selected: @game.solver}, {class: "player"}
+    %tr
+      %td= f.label :size_of_code, "Codelänge:"
+      %td= f.select :size_of_code, @game.color_sizes, {selected: @game.size_of_code}
+    %tr
+      %td= f.label :num_of_colors, "Anzahl Farben:"
+      %td= f.select :num_of_colors, @game.color_sizes, {selected: @game.num_of_colors}
+    %tr
+      %td
+      %td= f.submit "weiter"
