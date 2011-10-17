@@ -3,8 +3,8 @@ $game_next_id  ||=0;
 
 class Game
   attr_reader :player_values, :code_sizes, :color_sizes
-  attr_accessor :master, :solver, :size_of_code, :num_of_colors
-  attr_reader :mastermind, :solved, :colors #, :solver
+  attr_reader :master, :solver, :size_of_code, :num_of_colors, :colors
+  attr_accessor :solved
   attr_reader :id
 
 
@@ -26,25 +26,38 @@ class Game
   def properties= options = {master: "Computer", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
     @master, @solver = options[:master], options[:solver]
     @size_of_code, @num_of_colors = options[:size_of_code].to_i, options[:num_of_colors].to_i
+    @colors = %w[green yellow blue red magenta black white orange][0, num_of_colors]
     @solved = false
+    @strategy = ComputerAgainstHumanStrategy.new self
   end
 
   def start
-    @colors = %w[green yellow blue red magenta black white orange][0, num_of_colors]
-    @mastermind = Mastermind.new @colors, size_of_code
-    #@solver = Solver.new colors, size_of_code
+    @strategy.start
   end
 
   def guess args
-    guess = Array.new size_of_code
-    args.each_pair { |key, value| guess[key.to_i] = value }
-    puts "GUESSSS#{guess.to_s}"
-    @solved = mastermind.guess guess
+    @strategy.guess args
   end
 
   def self.find id
     $game_instances[id]
   end
 
+end
+
+class ComputerAgainstHumanStrategy
+  def initialize game
+    @game = game
+  end
+
+  def start
+    @mastermind = Mastermind.new @game.colors, @game.size_of_code
+  end
+
+  def guess args
+    guess = Array.new size_of_code
+    args.each_pair { |key, value| guess[key.to_i] = value }
+    @game.solved = @mastermind.guess guess
+  end
 
 end
