@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list id="f7144581-9042-4d48-aee8-a64a01667a7d" name="Default" comment="" />
     <list default="true" id="1b5edda0-2804-4543-9163-9d931cc53942" name="not changed" comment="new start_game action with gui and">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/admin_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/admin.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/_game.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rails_3_1_sandbox.iml" afterPath="$PROJECT_DIR$/.idea/rails_3_1_sandbox.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.watchr" afterPath="$PROJECT_DIR$/.watchr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game.rb" afterPath="$PROJECT_DIR$/app/models/game.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/mastermind/solver/black_solver_spec.rb" afterPath="$PROJECT_DIR$/spec/lib/mastermind/solver/black_solver_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/mastermind/solver/white_solver_spec.rb" afterPath="$PROJECT_DIR$/spec/lib/mastermind/solver/white_solver_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/index.html.haml" afterPath="$PROJECT_DIR$/app/views/admin/index.html.haml" />
     </list>
     <ignored path="rails_3_1_sandbox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,19 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mastermind_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mastermind_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="33" selection-start="872" selection-end="872" vertical-scroll-proportion="0.9183673">
+            <state line="36" column="33" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="48" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+            <state line="14" column="31" selection-start="300" selection-end="300" vertical-scroll-proportion="0.47619048">
               <folding />
             </state>
           </provider>
@@ -138,8 +126,8 @@
         <option value="$PROJECT_DIR$/app/views/admin/_game.html.haml" />
         <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/controllers/admin_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/index.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/index.html.haml" />
       </list>
     </option>
   </component>
@@ -1118,20 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/_game.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="48" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="25" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
@@ -1141,7 +1115,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="33" selection-start="872" selection-end="872" vertical-scroll-proportion="0.9183673">
+        <state line="36" column="33" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/_game.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="300" selection-end="300" vertical-scroll-proportion="0.47619048">
           <folding />
         </state>
       </provider>

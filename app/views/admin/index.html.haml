@@ -12,7 +12,7 @@ laufende Spiele
     = render partial: "game", locals: {game: game}
 gelöste Spiele
 %ul
-  - @admin.solved.each do |game_instance|
+  - @admin.solved.each do |game|
     = render partial: "game", locals: {game: game}
 
 noch gar nicht gestartete Spiele
