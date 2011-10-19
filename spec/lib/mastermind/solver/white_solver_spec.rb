@@ -13,11 +13,13 @@ describe "find_solutions_for_white" do
     before :all do
       @num_of_white = 1
     end
+
     it "1 color" do
       array = %w[a]
       solutions = find_solutions(array, @num_of_white)
       solutions.size.should == 0
     end
+
     it "2 colors" do
       array = %w[a b]
       solutions = find_solutions(array, @num_of_white)
@@ -25,6 +27,7 @@ describe "find_solutions_for_white" do
       solutions.should include [nil, "a"]
       solutions.should include ["b", nil]
     end
+
     it "3 colors" do
       array = %w[a b c]
       solutions = find_solutions(array, @num_of_white)
@@ -37,6 +40,7 @@ describe "find_solutions_for_white" do
       solutions.should include [nil, "c", nil]
     end
   end
+
   context "num_of_white = 2" do
     before :all do
       @num_of_white = 2

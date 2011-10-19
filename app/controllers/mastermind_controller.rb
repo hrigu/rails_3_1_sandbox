@@ -8,7 +8,7 @@ class MastermindController < ApplicationController
     end
     puts session.inspect
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render "index" } # index.html.erb
     end
   end
 
@@ -26,10 +26,16 @@ class MastermindController < ApplicationController
 
   def guess
     @game = Game.find session[:game_id]
-    @game.guess params[:guess] if params[:guess]
-    String next_page = @game.solved ? "game_solved" : "play_game"
-    respond_to do |format|
-      format.html { render next_page }
+    puts "game = #{@game}"
+    if @game
+      @game.guess params[:guess] if params[:guess]
+      String next_page = @game.solved ? "game_solved" : "play_game"
+      respond_to do |format|
+        format.html { render next_page }
+      end
+    else
+      redirect_to mastermind_path
+      return
     end
   end
 end

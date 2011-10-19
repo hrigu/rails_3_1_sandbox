@@ -56,8 +56,19 @@ class Game
     $game_instances[id]
   end
 
+  def self.delete id
+    $game_instances.each do |key, value|
+      puts key
+    end
+    $game_instances.delete id
+    $game_instances.each do |key, value|
+      puts key
+    end
+  end
+
+
   def mastermind
-    @strategy.mastermind
+    @strategy.mastermind if @strategy
   end
 
 end
@@ -99,6 +110,8 @@ class HumanAgainstComputerStrategy < GameStrategy
     @game.solved = @mastermind.guess @current_guess
     unless @game.solved
       @solver.reduce_solutions @mastermind.current_guess
+    else
+      @solver = nil     #to save memory
     end
   end
 

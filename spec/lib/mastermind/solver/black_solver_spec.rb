@@ -12,7 +12,6 @@ describe BlackSolver do
       solutions.should include [nil, "b", nil, nil]
       solutions.should include [nil, nil, "c", nil]
       solutions.should include [nil, nil, nil, "d"]
-
     end
   end
   context "two black" do
@@ -28,8 +27,6 @@ describe BlackSolver do
       #not
       solutions.should_not include ["a", "b", nil, "d"]
       solutions.should_not include ["a", nil, "b", nil]
-
-
     end
   end
   context "three black" do
@@ -51,7 +48,6 @@ describe BlackSolver do
       solutions = black_solver.find_solutions %w[a b c d], 4
       solutions.size.should == 1
       solutions.should include ["a", "b", "c", "d"]
-
     end
   end
 

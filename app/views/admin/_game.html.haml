@@ -1,0 +1,9 @@
+%ul
+  %li
+    code:
+    = game.mastermind.code
+    - game.mastermind.guesses.each do |guess|
+      %li
+        = guess
+    %li
+      = link_to "delete", admin_delete_game_path(id: game.id)
