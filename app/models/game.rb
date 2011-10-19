@@ -1,5 +1,5 @@
 $game_instances ||= {}
-$game_next_id  ||=0;
+$game_next_id ||=0;
 
 class Game
   attr_reader :player_values, :code_sizes, :color_sizes
@@ -28,14 +28,27 @@ class Game
     @size_of_code, @num_of_colors = options[:size_of_code].to_i, options[:num_of_colors].to_i
     @colors = %w[green yellow blue red magenta black white orange][0, num_of_colors]
     @solved = false
-    @strategy = ComputerAgainstHumanStrategy.new self
+
+    if master == "Computer"
+      if solver == "Mensch"
+        @strategy = ComputerAgainstHumanStrategy.new self
+      else
+        @strategy = HumanAgainstComputerStrategy.new self
+      end
+    else
+      if solver == "Mensch"
+        @strategy = HumanAgainstComputerStrategy.new self
+      else
+        @strategy = HumanAgainstComputerStrategy.new self
+      end
+    end
   end
 
   def start
     @strategy.start
   end
 
-  def guess args
+  def guess args = nil
     @strategy.guess args
   end
 
@@ -43,9 +56,15 @@ class Game
     $game_instances[id]
   end
 
+  def mastermind
+    @strategy.mastermind
+  end
+
 end
 
-class ComputerAgainstHumanStrategy
+class GameStrategy
+  attr_reader :mastermind
+
   def initialize game
     @game = game
   end
@@ -53,11 +72,34 @@ class ComputerAgainstHumanStrategy
   def start
     @mastermind = Mastermind.new @game.colors, @game.size_of_code
   end
+end
+
+class ComputerAgainstHumanStrategy < GameStrategy
+
 
   def guess args
-    guess = Array.new size_of_code
+    guess = Array.new @game.size_of_code
     args.each_pair { |key, value| guess[key.to_i] = value }
     @game.solved = @mastermind.guess guess
+  end
+
+end
+
+class HumanAgainstComputerStrategy < GameStrategy
+
+  def start
+    super
+    @solver = Solver.new @game.colors, @game.size_of_code
+    @current_guess = @solver.make_guess
+  end
+
+  def guess args = nil
+    @current_guess = @solver.make_guess
+    puts @current_guess.inspect
+    @game.solved = @mastermind.guess @current_guess
+    unless @game.solved
+      @solver.reduce_solutions @mastermind.current_guess
+    end
   end
 
 end

@@ -17,9 +17,6 @@ class Solver
 
   def make_guess
     @guess_strategy.make_guess(@solution_disposer)
-   # r = Random.rand @solution_disposer.possible_solutions.size
-   # possible_solutions[r]
-
   end
 
   def include?   code

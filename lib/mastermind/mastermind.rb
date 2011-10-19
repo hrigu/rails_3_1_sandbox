@@ -22,8 +22,6 @@ class Mastermind
      @code << @possible_colors[r]
     end
 
-    puts "code = #{code}"
-
     @guesses = []
 
     @evaluator = Evaluator.new

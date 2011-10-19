@@ -15,7 +15,7 @@ class MastermindController < ApplicationController
   def start_game
     @game = Game.find (session[:game_id])
     if params[:game]
-      @game.properties= (params[:game])
+      @game.properties = (params[:game])
     end
     @game.start
 
