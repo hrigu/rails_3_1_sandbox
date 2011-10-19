@@ -51,6 +51,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.0.3, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="therubyracer (v0.9.4, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v2.6.1, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="spork (v0.9.0.rc9, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.2, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="term-ansicolor (v1.0.6, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.3.0, RVM: ruby-1.9.2-p290 [rails31]) [gem]" level="application" />

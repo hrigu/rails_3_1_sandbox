@@ -4,10 +4,10 @@ class BlackSolver
 
   def find_solutions code, num_of_blacks, fixed_pos = Array.new(code.size);
     solutions = []
-    positions = Array.new(code.size){|i| i}
+    positions = Array.new(code.size) { |i| i }
     permute positions, num_of_blacks do |permutation|
       solution = Solution.new fixed_pos
-      permutation.each {|p| solution[p] = code[p]}
+      permutation.each { |p| solution[p] = code[p] }
       solutions << solution
     end
     solutions

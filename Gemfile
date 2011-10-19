@@ -31,7 +31,7 @@ end
 # gem 'ruby-debug-ide19'
 
 group :production do
-  gem 'pg'  #for heroku
+  gem 'pg' #for heroku
 end
 
 #to enable the rake tasks, rspec-rails must be in the development group: see https://www.relishapp.com/rspec/rspec-rails and https://github.com/rspec/rspec-rails/issues/438
@@ -40,6 +40,7 @@ group :test, :development do
   gem 'rspec-rails', "~> 2.4"
   gem 'rcov'
   gem 'spork', '~> 0.9.0.rc'
+  gem 'watchr'
 end
 
 group :test do
@@ -54,7 +55,7 @@ group :test do
 end
 
 
-  # for javascript engine
+# for javascript engine
 gem 'execjs'
 gem 'therubyracer'
 
