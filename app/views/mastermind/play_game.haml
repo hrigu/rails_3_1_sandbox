@@ -8,12 +8,13 @@
     Neuer Versuch:
   .right
     = form_for :guess, {url: mastermind_guess_path }do |f|
-      .bank
-        - @game.size_of_code.times do |i|
-          .cell.target{id: "pos_#{i}"}
-        .space
-        - @game.colors.each do |color|
-          .cell.draggable{style: "background-color: #{color}", color: color}
-      - @game.size_of_code.times do |s|
-        = f.hidden_field(s.to_s, {size: 1})
+      - if @game.solver == "Mensch"
+        .bank
+          - @game.size_of_code.times do |i|
+            .cell.target{id: "pos_#{i}"}
+          .space
+          - @game.colors.each do |color|
+            .cell.draggable{style: "background-color: #{color}", color: color}
+        - @game.size_of_code.times do |s|
+          = f.hidden_field(s.to_s, {size: 1})
       = f.submit "knacken"

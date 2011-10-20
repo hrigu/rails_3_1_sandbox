@@ -1,7 +1,9 @@
 require "set"
 
 class Solution < Array
+
   attr_reader :not_possible_colors
+
   def initialize(arg)
     super arg
     if arg.is_a? Solution
@@ -12,7 +14,8 @@ class Solution < Array
 
   end
 
-  def set_not_possible_colors guess
+  #iterate over the solutio
+  def add_not_possible_colors guess
     self.each_with_index do |element, index|
        unless element
         @not_possible_colors.add guess[index]

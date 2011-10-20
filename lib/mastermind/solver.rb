@@ -25,20 +25,21 @@ class Solver
 
   def reduce_solutions guess
 
-    ps = @black_solver.find_solutions guess.code, guess.num_of_blacks
+    possible_solutions = @black_solver.find_solutions guess.code, guess.num_of_blacks
 
-    ps.each do |p|
-      p.set_not_possible_colors guess.code
+    #this should go to the blac_solver
+    possible_solutions.each do |p|
+      p.add_not_possible_colors guess.code
     end
 
-    ps = @white_solver.find_solutions guess.code, guess.num_of_whites, ps
 
 
+    possible_solutions = @white_solver.find_solutions guess.code, guess.num_of_whites, possible_solutions
 
-    num_of_not_evalutated_elements = @length_of_code - (guess.num_of_blacks + guess.num_of_whites)
-    possible_colors = @possible_colors
-    ps = fill_empty_positions(guess.code, ps)
-    @solution_disposer.add_solutions ps
+    possible_solutions = fill_empty_positions(possible_solutions)
+
+
+    @solution_disposer.add_solutions possible_solutions
     @solution_disposer.init_new_round
 
   end
@@ -47,10 +48,11 @@ class Solver
     @solution_disposer.possible_solutions.to_a
   end
 
+
   private
 
 
-  def fill_empty_positions(code, current_solutions)
+  def fill_empty_positions(current_solutions)
     possible_solutions = []
     current_solutions.each do |current_solution|
       empty_position_indices = find_empty_position_indices(current_solution)
@@ -58,7 +60,7 @@ class Solver
         when 0
           possible_solutions << current_solution
         else
-          possible_colors = create_possible_colors code, current_solution.not_possible_colors
+          possible_colors = create_possible_colors current_solution.not_possible_colors
           permute empty_position_indices.size, possible_colors do |permutation|
             s = create_new_solution(permutation, empty_position_indices, Array.new(current_solution))
             possible_solutions << s
@@ -69,9 +71,9 @@ class Solver
     possible_solutions
   end
 
-  def create_new_solution(permutation, empty_position_indices, current_solution)
+  def create_new_solution(permutation, empty_pos_indices, current_solution)
     #  p permutation
-    empty_position_indices.each_with_index do |index_in_current_solution, i|
+    empty_pos_indices.each_with_index do |index_in_current_solution, i|
       current_solution[index_in_current_solution] = permutation[i]
     end
     #   p current_solution
@@ -79,7 +81,7 @@ class Solver
   end
 
 
-  def create_possible_colors(code, not_included_colors)
+  def create_possible_colors(not_included_colors)
     #@possible_colors
     possible_colors = Array.new @possible_colors
     not_included_colors.each do |color|

@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/solution'
 
 class BlackSolver
 
+
   def find_solutions code, num_of_blacks, fixed_pos = Array.new(code.size);
     solutions = []
     positions = Array.new(code.size) { |i| i }

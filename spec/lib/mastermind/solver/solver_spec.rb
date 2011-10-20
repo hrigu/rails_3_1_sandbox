@@ -51,7 +51,100 @@ describe "Compute the possible Solutions" do
   end
 end
 
-describe "Reduce the possible solutions for n blacks and zero whites" do
+describe "Reduce the possible solutions. Initialized with 3 colors" do
+  describe " and 2 positions" do
+
+    before(:each) do
+      @solver = Solver.new %w[a b c], 2
+      @solver.possible_solutions.size.should == 9
+    end
+    context "one black" do
+      context "guess is [a a] and bewertung is [1,0]" do
+        it "should be" do
+          guess = Guess.new %w[a a]
+          guess.num_of_blacks = 1
+          @solver.reduce_solutions guess
+          @solver.possible_solutions.should == [%w[a b], %w[a c], %w[b a], %w[c a]]
+
+          #@solver.possible_solutions.each do |s|
+          #  puts s.inspect
+          #end
+          @solver.possible_solutions.size.should == 4
+
+        end
+      end
+    end
+    context "one white" do
+      context "guess is [a b] and bewertung is [0, 1]" do
+        #TODO fix this
+        it "should be" do
+          guess = Guess.new %w[a b]
+          guess.num_of_whites = 1
+#          @solver.reduce_solutions guess
+#          @solver.possible_solutions.should == [%w[b c], %w[c a]]
+#          @solver.possible_solutions.size.should == 2
+        end
+      end
+    end
+  end
+  describe "and 3 positions" do
+    before(:each) do
+      @solver = Solver.new %w[a b c], 3
+      @solver.possible_solutions.size.should == 27
+    end
+    context "one black" do
+      context "guess is [a b c]" do
+        it "should be" do
+          guess = Guess.new %w[a b c]
+          guess.num_of_blacks = 1
+          @solver.reduce_solutions guess
+          @solver.possible_solutions.should == [%w[a a a], %w[b b b], %w[c c c]]
+          @solver.possible_solutions.size.should == 3
+        end
+      end
+      context "guess is [a b b]" do
+        it "should be" do
+          guess = Guess.new %w[a b b]
+          guess.num_of_blacks = 1
+          @solver.reduce_solutions guess
+          @solver.possible_solutions.should == [["a", "a", "a"], ["a", "a", "c"], ["a", "c", "a"], ["a", "c", "c"], ["c", "b", "c"], ["c", "c", "b"]]
+
+          @solver.possible_solutions.each do |s|
+            puts s.inspect
+          end
+          @solver.possible_solutions.size.should == 6
+        end
+      end
+      context "guess is [a a b]" do
+        it "should be" do
+          guess = Guess.new %w[a a b]
+          guess.num_of_blacks = 1
+          @solver.reduce_solutions guess
+          #@solver.possible_solutions.should == [["a", "a", "a"], ["a", "a", "c"], ["a", "c", "a"], ["a", "c", "c"], ["c", "b", "c"], ["c", "c", "b"]]
+          @solver.possible_solutions.size.should == 6
+        end
+      end
+    end
+    #TODO Fix this
+    context "[1 1]" do
+      context "guess is [a b c]" do
+        it "should be" do
+          guess = Guess.new %w[a b c]
+          guess.num_of_blacks = 1
+          guess.num_of_whites = 1
+          @solver.reduce_solutions guess
+
+          @solver.possible_solutions.each do |s|
+            puts s.inspect
+          end
+#          @solver.possible_solutions.size.should == 6
+        end
+      end
+    end
+  end
+end
+
+describe "Reduce the possible solutions. Initialized with 6 colors and 4 positions" do
 
   before(:each) do
     @solver = init_solver(%w[a b c d e f])
@@ -59,7 +152,7 @@ describe "Reduce the possible solutions for n blacks and zero whites" do
 
   after (:each) do
     @solver.possible_solutions.each do |p|
-   #   puts p.join " "
+      #   puts p.join " "
       p.size.should == 4
     end
 
@@ -107,7 +200,7 @@ describe "Reduce the possible solutions for n blacks and zero whites" do
       @solver.reduce_solutions guess
       @solver.possible_solutions.size.should == 182
       @solver.possible_solutions.should include %w[b a a a]
-      @solver.possible_solutions.should_not include %w[b a d e]   #one pos, one color that is already shown
+      @solver.possible_solutions.should_not include %w[b a d e] #one pos, one color that is already shown
       @solver.possible_solutions.should_not include %w[a b e d]
     end
   end
@@ -159,7 +252,7 @@ describe "Reduce the possible solutions for n whites and zero blacks" do
       @solver.possible_solutions.size.should == 172
       @solver.possible_solutions.should_not include guess.code
       @solver.possible_solutions.should_not include %w[b c d a]
-                                                   #stichprobe
+      #stichprobe
       @solver.possible_solutions.should include %w[b c a e]
       @solver.possible_solutions.should include %w[b c a c]
     end
@@ -218,32 +311,32 @@ describe "Reduce the possible solutions for 3 whites and 1 blacks" do
   end
 
   context "For three whites and one black" do
-     it "should have only one solution" do
-       guess = Guess.new %w[a b c d]
-       guess.num_of_blacks = 1
-       guess.num_of_whites = 3
-       @solver.reduce_solutions guess
-       @solver.possible_solutions.size.should == 44
-       @solver.possible_solutions.should_not include guess.code
-       @solver.possible_solutions.should_not include %w[b a d c]
-                                                    #stichprobe
-       @solver.possible_solutions.should include %w[a c d b]
-       @solver.possible_solutions.should include %w[c b d a]
-     end
+    it "should have only one solution" do
+      guess = Guess.new %w[a b c d]
+      guess.num_of_blacks = 1
+      guess.num_of_whites = 3
+      @solver.reduce_solutions guess
+      @solver.possible_solutions.size.should == 44
+      @solver.possible_solutions.should_not include guess.code
+      @solver.possible_solutions.should_not include %w[b a d c]
+      #stichprobe
+      @solver.possible_solutions.should include %w[a c d b]
+      @solver.possible_solutions.should include %w[c b d a]
+    end
   end
   context "For zero whites and zero black" do
-     it "should have only one solution" do
-       guess = Guess.new %w[a b c d]
-       guess.num_of_blacks = 0
-       guess.num_of_whites = 0
-       @solver.reduce_solutions guess
-       @solver.possible_solutions.size.should == 16
-       @solver.possible_solutions.should_not include guess.code
-       @solver.possible_solutions.should_not include %w[a f f f]
-                                                    #stichprobe
-       @solver.possible_solutions.should include %w[e f e f]
-       @solver.possible_solutions.should include %w[f f f f]
-     end
+    it "should have only one solution" do
+      guess = Guess.new %w[a b c d]
+      guess.num_of_blacks = 0
+      guess.num_of_whites = 0
+      @solver.reduce_solutions guess
+      @solver.possible_solutions.size.should == 16
+      @solver.possible_solutions.should_not include guess.code
+      @solver.possible_solutions.should_not include %w[a f f f]
+      #stichprobe
+      @solver.possible_solutions.should include %w[e f e f]
+      @solver.possible_solutions.should include %w[f f f f]
+    end
   end
 end
 

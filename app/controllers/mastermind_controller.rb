@@ -28,7 +28,7 @@ class MastermindController < ApplicationController
     @game = Game.find session[:game_id]
     puts "game = #{@game}"
     if @game
-      @game.guess params[:guess] if params[:guess]
+      @game.guess params[:guess] #if params[:guess]
       String next_page = @game.solved ? "game_solved" : "play_game"
       respond_to do |format|
         format.html { render next_page }

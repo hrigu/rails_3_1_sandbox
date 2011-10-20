@@ -1,5 +1,5 @@
 require "spec_helper"
-#require File.dirname(__FILE__) + '/../../lib/mastermind/mastermind'
+require File.expand_path(Rails.root) + '/lib/mastermind/mastermind'
 
 describe "Evaluator can evaluate guesses" do
 

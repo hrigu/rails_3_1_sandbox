@@ -2,6 +2,7 @@ require 'set'
 require File.dirname(__FILE__) + '/solution'
 
 class WhiteSolver
+
   ##
   #
   # @param guess

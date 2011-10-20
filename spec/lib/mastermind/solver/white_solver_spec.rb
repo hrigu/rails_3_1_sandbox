@@ -4,7 +4,7 @@ require File.expand_path(Rails.root) + '/lib/mastermind/solver/white_solver'
 def find_solutions(array, num_of_whites)
   solutions = WhiteSolver.new.find_solutions(array, num_of_whites)
  # p solutions
-  solutions.to_set.size.should == solutions.size
+  solutions.to_set.size.should == solutions.size #no duplicates
   solutions
 end
 
@@ -60,7 +60,7 @@ describe "find_solutions_for_white" do
       array = %w[a b c]
       solutions = find_solutions(array, @num_of_white)
       solutions.size.should == 9
-      # p solutions
+       p solutions
       #solutions.should include ["b", "a"]
     end
     it "should have 1 solution" do
