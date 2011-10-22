@@ -17,9 +17,6 @@ class WhiteSolver
 
     solutions = Set.new
 
-    #TODO not neccessary?
-    #already_found_solutions = [Solution.new(Array.new(guess.size))] if already_found_solutions.empty?
-
     already_found_solutions.each do |already_found_solution|
       already_set_positions = [] #set by black solver
       already_found_solution.code.each_with_index do |c, i|

@@ -28,14 +28,9 @@ class Solver
   def reduce_solutions guess
 
     possible_solutions = @black_solver.find_solutions guess.code, guess.num_of_blacks
-
-    puts "solver: after black solver: "+possible_solutions.inspect
     possible_solutions = @white_solver.find_solutions guess.code, guess.num_of_whites, possible_solutions
-    puts "solver: after white solver: "+possible_solutions.inspect
-
     possible_solutions = @empty_positions_filler.fill_empty_positions(possible_solutions)
 
-    puts "solver: after fill the emp: "+possible_solutions.inspect
 
     @solution_disposer.add_solutions possible_solutions
     @solution_disposer.init_new_round
