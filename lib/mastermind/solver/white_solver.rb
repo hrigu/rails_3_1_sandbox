@@ -39,7 +39,6 @@ class WhiteSolver
 
   def permute_intern guess, already_set_positions, num_of_whites, current_white, current_pos, solution, &args
     if current_white == num_of_whites
-      puts "permute_intern: found #{solution}"
       yield solution
     else
       find_new_possible_solutions(guess, already_set_positions, current_pos, solution) do |current_pos, new_solution|
