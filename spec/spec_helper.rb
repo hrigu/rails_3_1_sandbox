@@ -1,3 +1,4 @@
+require File.dirname(__FILE__) + '/matcher/solution_matcher'
 require 'spork'
 
 Spork.prefork do

@@ -7,15 +7,29 @@ class WhiteSolver
   #
   # @param guess
   ##
-  def find_solutions guess, num_of_whites, already_found_solutions = [];
-    if (num_of_whites == 0)
+  def find_solutions guess, num_of_whites, already_found_solutions;
+    if num_of_whites == 0
+      already_found_solutions.each do |s|
+        s.add_not_used_colors_to_the_not_possible_colors guess
+      end
       return already_found_solutions
     end
+
     solutions = Set.new
-    already_found_solutions = [Array.new(guess.size)] if already_found_solutions.empty?
+
+    #TODO not neccessary?
+    #already_found_solutions = [Solution.new(Array.new(guess.size))] if already_found_solutions.empty?
+
     already_found_solutions.each do |already_found_solution|
-      permute_intern guess, num_of_whites, 0, 0, already_found_solution do |solution|
+      already_set_positions = [] #set by black solver
+      already_found_solution.code.each_with_index do |c, i|
+        already_set_positions << i if c
+      end
+
+      permute_intern guess,already_set_positions, num_of_whites, 0, 0, already_found_solution do |solution|
+        solution.add_not_used_colors_to_the_not_possible_colors guess
         solutions << solution
+
       end
     end
     solutions.to_a
@@ -23,44 +37,38 @@ class WhiteSolver
 
   private
 
-  def permute_intern guess, max_depth = 1, depth = 0, old_pos = 0, possible_solution, &args
-    if depth == max_depth
-      yield possible_solution
+  def permute_intern guess, already_set_positions, num_of_whites, current_white, current_pos, solution, &args
+    if current_white == num_of_whites
+      puts "permute_intern: found #{solution}"
+      yield solution
     else
-      find_new_possible_solutions(args, guess, depth, max_depth, old_pos, possible_solution) do |current_pos, possible_solution|
-        #  p result
-        permute_intern(guess, max_depth, depth + 1, current_pos+1, possible_solution, &args)
-
-      end
+      find_new_possible_solutions(guess, already_set_positions, current_pos, solution) do |current_pos, new_solution|
+        permute_intern(guess, already_set_positions, num_of_whites, current_white + 1, current_pos+1, new_solution, &args)
+     end
     end
   end
 
-  def find_new_possible_solutions(args, guess, depth, max_depth, old_pos, possible_solution)
+  def find_new_possible_solutions(guess, already_set_positions, old_pos, solution)
     (old_pos ..guess.size-1).each do |current_pos|
-      current_color = guess[current_pos]
-#      if possible_solution[current_pos]
- #       yield current_pos, possible_solution
-  #    else
-        other_pos_indices = find_other_pos_indices current_color, guess, possible_solution
-        # puts "permute: depth = #{depth}, current_color = #{current_color}, already_found = #{already_found}, other_pos = #{other_pos}"
+      unless already_set_positions.find_index current_pos     #only there  is not already a color on current_pos (from a black pin)
+        current_color = guess[current_pos]
+        other_pos_indices = find_other_pos_indices current_color, guess, solution
         other_pos_indices.each do |i|
-          result = Solution.new possible_solution
-          result.remove_color_from_not_possible_colors current_color
-          result[i] = current_color
+          result = Solution.new solution
+          result.add_color_at(current_color, i)
           yield current_pos, result
         end
-   #   end
+      end
     end
   end
 
   ##
   # find the indices of the possible targets for the color of the current position
   ##
-  def find_other_pos_indices(current_color, code, possibleSolution)
+  def find_other_pos_indices(current_color, code, possible_solution)
     other_pos_indices = []
     code.each_with_index do |e, i|
-      #puts "current_color: #{current_color} code_element: #{e}"
-      unless possibleSolution[i] || e == current_color
+      unless possible_solution.code[i] || e == current_color || possible_solution.not_possible_colors.include?(current_color)
         other_pos_indices << i
       end
     end

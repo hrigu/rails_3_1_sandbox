@@ -52,7 +52,7 @@ describe "Compute the possible Solutions" do
 end
 
 describe "Reduce the possible solutions. Initialized with 3 colors" do
-  describe " and 2 positions" do
+  describe "and 2 positions" do
 
     before(:each) do
       @solver = Solver.new %w[a b c], 2
@@ -180,12 +180,12 @@ describe "Reduce the possible solutions. Initialized with 6 colors and 4 positio
   end
 
   context "For two blacks" do
-    it "should have 105 solutions" do
+    it "should have 98 solutions" do
       guess = Guess.new %w[b b c d]
       guess.num_of_blacks = 2
       guess.num_of_whites = 0
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 105
+      @solver.possible_solutions.size.should == 98
       #stichprobe
       @solver.possible_solutions.should include %w[b a c f]
       @solver.possible_solutions.should include %w[b b e e]
@@ -245,11 +245,11 @@ describe "Reduce the possible solutions for n whites and zero blacks" do
     end
   end
   context "For three whites" do
-    it "should have 172 solution" do
+    it "should have 136 solution" do
       guess = Guess.new %w[a b c d]
       guess.num_of_whites = 3
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 172
+      @solver.possible_solutions.size.should == 136
       @solver.possible_solutions.should_not include guess.code
       @solver.possible_solutions.should_not include %w[b c d a]
       #stichprobe
@@ -259,11 +259,11 @@ describe "Reduce the possible solutions for n whites and zero blacks" do
   end
 
   context "For two whites" do
-    it "should have 456 solution" do
+    it "should have 312 solution" do
       guess = Guess.new %w[a b c d]
       guess.num_of_whites = 2
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 456
+      @solver.possible_solutions.size.should == 312
       @solver.possible_solutions.should_not include guess.code
       @solver.possible_solutions.should_not include %w[a c b d]
 
@@ -273,11 +273,11 @@ describe "Reduce the possible solutions for n whites and zero blacks" do
     end
   end
   context "For one white" do
-    it "should have 228 solution" do
+    it "should have 152 solution" do
       guess = Guess.new %w[a b c d]
       guess.num_of_whites = 1
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 228
+      @solver.possible_solutions.size.should == 152
       @solver.possible_solutions.should_not include guess.code
       @solver.possible_solutions.should_not include %w[a b e f]
       @solver.possible_solutions.should_not include %w[c a b f]
@@ -292,7 +292,7 @@ describe "Reduce the possible solutions for n whites and zero blacks" do
       guess = Guess.new %w[b a a c]
       guess.num_of_whites = 1
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 408
+      @solver.possible_solutions.size.should == 276
       @solver.possible_solutions.should include %w[f c c e]
     end
   end
@@ -311,12 +311,12 @@ describe "Reduce the possible solutions for 3 whites and 1 blacks" do
   end
 
   context "For three whites and one black" do
-    it "should have only one solution" do
+    it "should have 8 solution" do
       guess = Guess.new %w[a b c d]
       guess.num_of_blacks = 1
       guess.num_of_whites = 3
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 44
+      @solver.possible_solutions.size.should == 8
       @solver.possible_solutions.should_not include guess.code
       @solver.possible_solutions.should_not include %w[b a d c]
       #stichprobe

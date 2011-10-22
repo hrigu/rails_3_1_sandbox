@@ -11,37 +11,39 @@ class SolutionDisposer
   end
 
   def add_solutions solutions
-    solutions.each {|s| self.add s}
+    solutions.each do |s|
+      self.add s.code
+    end
   end
 
   def add element, to_set = @current_possible_solutions
     if element.size != @solution_size || !element.is_a?(Array)
- #     puts "#{element} not correct"
+      #     puts "#{element} not correct"
     elsif has_not_expected_colors element
 #      puts "not expected colors"
     else
       result = to_set.add? element
- #     puts "sd: #{element} already in the solution" unless result
+      #     puts "sd: #{element} already in the solution" unless result
     end
   end
 
   def include? code
-     @possible_solutions.include? code
+    @possible_solutions.include? code
   end
 
   def init_new_round
     if @current_possible_solutions
-      new_poss_solutions = SortedSet.new
-      @current_possible_solutions.to_a.each do |ps|
+      new_poss_solutions = Set.new
+      @current_possible_solutions.each do |ps|
         if include? ps
           new_poss_solutions.add ps
         else
-    #      puts "ps:#{ps} doesn't exist"
+          #      puts "ps:#{ps} doesn't exist"
         end
       end
       @possible_solutions = new_poss_solutions
     end
-    @current_possible_solutions = SortedSet.new
+    @current_possible_solutions = Set.new
   end
 
   def size_of_current_possible_solutions
@@ -52,7 +54,7 @@ class SolutionDisposer
   private
 
   def initialize_possible_solutions
-    @possible_solutions = SortedSet.new
+    @possible_solutions = Set.new
     create_all_possible_solutions do |solution|
       self.add solution, @possible_solutions
     end

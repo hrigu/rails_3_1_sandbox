@@ -106,6 +106,7 @@ class HumanAgainstComputerStrategy < GameStrategy
 
   def guess args = nil
     @current_guess = @solver.make_guess
+
     puts @current_guess.inspect
     @game.solved = @mastermind.guess @current_guess
     unless @game.solved

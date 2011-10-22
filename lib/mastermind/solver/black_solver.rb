@@ -8,7 +8,8 @@ class BlackSolver
     positions = Array.new(code.size) { |i| i }
     permute positions, num_of_blacks do |permutation|
       solution = Solution.new fixed_pos
-      permutation.each { |p| solution[p] = code[p] }
+      permutation.each { |p| solution.code[p] = code[p] }
+      solution.mark_not_possible_solutions_after_black code
       solutions << solution
     end
     solutions
