@@ -6,5 +6,8 @@
     = stylesheet_link_tag :application
     = javascript_include_tag :application
   %body
+    - if flash[:notice]
+      .flash
+        = flash[:notice]
     #main
       = yield  #the content from the view comes in (see 3.2 Understanding yield in doc/guides/layouts_and_rendering.html)

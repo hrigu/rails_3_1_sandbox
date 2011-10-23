@@ -52,6 +52,10 @@ class Game
     @strategy.guess args
   end
 
+  def possible_solutions
+    @strategy.possible_solutions
+  end
+
   def self.find id
     $game_instances[id]
   end
@@ -82,6 +86,10 @@ class GameStrategy
 
   def start
     @mastermind = Mastermind.new @game.colors, @game.size_of_code
+  end
+
+  def possible_solutions
+    []
   end
 end
 
@@ -114,6 +122,10 @@ class HumanAgainstComputerStrategy < GameStrategy
     else
       @solver = nil     #to save memory
     end
+  end
+
+  def possible_solutions
+    @solver.possible_solutions
   end
 
 end

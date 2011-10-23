@@ -17,7 +17,10 @@ class MastermindController < ApplicationController
     if params[:game]
       @game.properties = (params[:game])
     end
-    @game.start
+    begin
+      @game.start
+    rescue => detail
+    end
 
     respond_to do |format|
       format.html { render "play_game" }
@@ -28,14 +31,18 @@ class MastermindController < ApplicationController
     @game = Game.find session[:game_id]
     puts "game = #{@game}"
     if @game
-      @game.guess params[:guess] #if params[:guess]
+      begin
+        @game.guess params[:guess] #if params[:guess]
+      rescue => detail
+        puts detail
+        flash[:notice] = "could not make a guess, because I don't have possible solutions any more'"
+      end
       String next_page = @game.solved ? "game_solved" : "play_game"
       respond_to do |format|
         format.html { render next_page }
       end
     else
       redirect_to mastermind_path
-      return
     end
   end
 end
