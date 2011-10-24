@@ -17,10 +17,9 @@ class MastermindController < ApplicationController
       begin
         @game.properties = (params[:game])
       rescue => detail
-        puts "hallo!!"
         flash[:notice] = detail.message
         redirect_to mastermind_path
-        return
+        return  #this is necessary, otherwise the flow goes on in this method
       end
     end
     @game.start
