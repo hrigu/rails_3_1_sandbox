@@ -19,15 +19,48 @@ describe "Storing Games" do
 end
 
 describe "initialize Game" do
-  context "Human vs Computer" do
-    it "the human_vs_computer strategy is used" do
+  context "Computer vs Mensch" do
+    it "works" do
       @g = Game.new
-      @g.properties = {master: "Mensch", solver: "Computer", size_of_code: "4", num_of_colors: "6"}
+      @g.properties = {master: "Computer", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
+    end
+  end
+  context "Computer vs Computer" do
+    it "works" do
+      @g = Game.new
+      begin
+        @g.properties = {master: "Computer", solver: "Computer", size_of_code: "4", num_of_colors: "6"}
+      rescue => details
+        details.should
+      end
       @g.start
       until @g.solved
         @g.guess
       end
-
+    end
+  end
+  context "Mensch vs Computer" do
+    it "is not implemented yet" do
+      @g = Game.new
+      begin
+        @g.properties = {master: "Mensch", solver: "Computer", size_of_code: "4", num_of_colors: "6"}
+      rescue => details
+        details.should be_a RuntimeError
+      end
+      #@g.start
+      #until @g.solved
+      #  @g.guess
+      #end
+    end
+  end
+  context "Mensch vs Mensch" do
+    it "makes no sence- > throws an error" do
+      @g = Game.new
+      begin
+        @g.properties = {master: "Mensch", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
+      rescue => details
+        details.should be_a RuntimeError
+      end
     end
   end
 end

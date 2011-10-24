@@ -95,7 +95,6 @@ end
 
 class ComputerAgainstHumanStrategy < GameStrategy
 
-
   def guess args
     guess = Array.new @game.size_of_code
     args.each_pair { |key, value| guess[key.to_i] = value }
