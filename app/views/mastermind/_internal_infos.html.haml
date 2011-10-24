@@ -1,0 +1,13 @@
+- if @game.solver == "Computer"
+  .info
+    %br
+    %br
+    mögliche Lösungen:
+    = @game.possible_solutions.size
+    - if @game.possible_solutions.size < 10000
+      - @game.possible_solutions.each do |possible_solution|
+        .left &nbsp;
+        .right
+          .bank
+            - possible_solution.each do |color|
+              .cell{style: "background: #{color}", color: color}

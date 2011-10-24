@@ -18,16 +18,4 @@
         - @game.size_of_code.times do |s|
           = f.hidden_field(s.to_s, {size: 1})
       = f.submit "knacken"
-- if @game.solver == "Computer"
-  .info
-    %br
-    %br
-    mögliche Lösungen:
-    = @game.possible_solutions.size
-    - if @game.possible_solutions.size < 10000
-      - @game.possible_solutions.each do |possible_solution|
-        .left &nbsp;
-        .right
-          .bank
-            - possible_solution.each do |color|
-              .cell{style: "background: #{color}", color: color}
+= render "internal_infos"
