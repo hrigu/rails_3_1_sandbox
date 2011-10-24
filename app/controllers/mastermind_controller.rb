@@ -6,7 +6,6 @@ class MastermindController < ApplicationController
       @game = Game.new
       session[:game_id] = @game.id
     end
-    puts session.inspect
     respond_to do |format|
       format.html { render "index" } # index.html.erb
     end
