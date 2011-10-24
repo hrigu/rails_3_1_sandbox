@@ -33,13 +33,13 @@ class Game
       if solver == "Mensch"
         @strategy = ComputerAgainstHumanStrategy.new self
       else
-        @strategy = HumanAgainstComputerStrategy.new self
+        @strategy = ComputerAgainstComputerStrategy.new self
       end
     else
       if solver == "Mensch"
-        @strategy = HumanAgainstComputerStrategy.new self
+        raise "Mensch vs Mensch nicht implementiert. Holt euch ein Mastermind aus der Ding-Welt!"
       else
-        @strategy = HumanAgainstComputerStrategy.new self
+        raise "Mensch vs Computer noch nicht implementiert"
       end
     end
   end
@@ -104,7 +104,7 @@ class ComputerAgainstHumanStrategy < GameStrategy
 
 end
 
-class HumanAgainstComputerStrategy < GameStrategy
+class ComputerAgainstComputerStrategy < GameStrategy
 
   def start
     super

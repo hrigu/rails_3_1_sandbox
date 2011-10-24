@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list id="f7144581-9042-4d48-aee8-a64a01667a7d" name="Default" comment="" />
     <list default="true" id="1b5edda0-2804-4543-9163-9d931cc53942" name="not changed" comment="remove comments">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/mastermind.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/mastermind.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game.rb" afterPath="$PROJECT_DIR$/app/models/game.rb" />
     </list>
     <ignored path="rails_3_1_sandbox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,28 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mastermind.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/mastermind/mastermind.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="mastermind_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.17910448">
+            <state line="21" column="39" selection-start="541" selection-end="541" vertical-scroll-proportion="0.4234234">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guess_strategy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb">
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -57,61 +48,16 @@
       <file leaf-file-name="game.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="15" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
+            <state line="47" column="0" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play_game.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/mastermind/play_game.haml">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mastermind.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/mastermind.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_internal_infos.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/mastermind/_internal_infos.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="64" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_code.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/mastermind/_code.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_board.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/mastermind/_board.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="97" selection-end="399" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="24" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,10 +88,10 @@
         <option value="$PROJECT_DIR$/lib/mastermind/solver/black_solver.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
         <option value="$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb" />
-        <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/views/mastermind/play_game.haml" />
         <option value="$PROJECT_DIR$/app/views/mastermind/internal_infos.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/mastermind.js" />
+        <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
       </list>
     </option>
@@ -1200,10 +1146,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13554634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26495728" sideWeight="0.57261413" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2642857" sideWeight="0.58367914" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22" sideWeight="0.57399726" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19502075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22" sideWeight="0.57399726" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4163209" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42600277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1293,21 +1239,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spec/lib/mastermind/solver/solver_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="318" column="49" selection-start="10257" selection-end="10257" vertical-scroll-proportion="0.52162164" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/white_solver.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="58" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.36842105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/api/Array.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs19/module.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="744" column="13" selection-start="22696" selection-end="22696" vertical-scroll-proportion="0.33240998" />
@@ -1331,11 +1262,6 @@
     <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="30" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="15" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/mastermind/_code.html.haml">
@@ -1374,9 +1300,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/guides/routing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.17910448">
+        <state line="21" column="39" selection-start="541" selection-end="541" vertical-scroll-proportion="0.4234234">
           <folding />
         </state>
       </provider>

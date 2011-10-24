@@ -14,13 +14,16 @@ class MastermindController < ApplicationController
   def start_game
     @game = Game.find (session[:game_id])
     if params[:game]
-      @game.properties = (params[:game])
+      begin
+        @game.properties = (params[:game])
+      rescue => detail
+        puts "hallo!!"
+        flash[:notice] = detail.message
+        redirect_to mastermind_path
+        return
+      end
     end
-    begin
-      @game.start
-    rescue => detail
-    end
-
+    @game.start
     respond_to do |format|
       format.html { render "play_game" }
     end
@@ -44,4 +47,5 @@ class MastermindController < ApplicationController
       redirect_to mastermind_path
     end
   end
+
 end
