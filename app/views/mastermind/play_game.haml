@@ -10,12 +10,12 @@
     = form_for :guess, {url: mastermind_guess_path }do |f|
       - if @game.type == Game::COMPUTER_MENSCH
         .bank
-          - @game.size_of_code.times do |i|
+          - @game.board.num_of_elements.times do |i|
             .cell.target{id: "pos_#{i}"}
           .space
-          - @game.colors.each do |color|
+          - @game.game_spec.colors.each do |color|
             .cell.draggable{style: "background-color: #{color}", color: color}
-        - @game.size_of_code.times do |s|
+        - @game.board.num_of_elements.times do |s|
           = f.hidden_field(s.to_s, {size: 1})
       = f.submit "knacken"
 = render "internal_infos"

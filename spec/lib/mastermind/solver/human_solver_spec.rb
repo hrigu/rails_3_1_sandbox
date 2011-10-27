@@ -1,12 +1,13 @@
 require "spec_helper"
-require File.expand_path(Rails.root) + '/lib/mastermind/solver/computer_solver'
-require File.expand_path(Rails.root) + '/lib/mastermind/mastermind'
+require File.expand_path(Rails.root) + '/lib/mastermind/solver/human_solver'
 
-
-def init_solver(possible_colors)
-  #HumanSolver.new possible_colors, 4
-  pending
-
+describe HumanSolver do
+  it "can write a guess" do
+    solver = HumanSolver.new %w[a b c d], 4
+    solver.current_guess = %w[a b b a]
+    guess = solver.make_guess
+    guess.should == %w[a b b a]
+  end
 end
 
 

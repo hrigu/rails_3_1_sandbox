@@ -1,6 +1,7 @@
 puts "Mastermind: before require"
 require File.dirname(__FILE__) + '/board/board'
 require File.dirname(__FILE__) + '/solver/computer_solver'
+require File.dirname(__FILE__) + '/solver/human_solver'
 require File.dirname(__FILE__) + '/master/computer_master'
 
 

@@ -32,7 +32,14 @@ class ComputerAgainstHumanStrategy < GameStrategy
   end
 
   def guess guess
-    @solver.guess
+    @solver.current_guess = guess
+    @board.guess = guess
+    unless @master.solved
+      eval = @master.evaluate guess
+      @board.eval = eval
+    else
+      @solver = nil #to save memory
+    end
   end
 
 end

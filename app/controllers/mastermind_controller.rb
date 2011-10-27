@@ -44,8 +44,8 @@ class MastermindController < ApplicationController
   def guess
     @game = GameHolder.find session[:game_id]
     if @game
+      @game.guess build_guess(params[:guess]) #if params[:guess]
       begin
-        @game.guess build_guess(params[:guess]) #if params[:guess]
       rescue => detail
         puts detail
         flash[:notice] = "could not make a guess, because I don't have possible solutions any more'"
