@@ -1,49 +1,42 @@
 require 'spec_helper'
 
-describe "Storing Games" do
-  context "when two instances are stored" do
-    before(:each) do
-      @g1 = Game.new
-      @g2 = Game.new
-    end
+def create_spec master = "Computer", solver = "Computer", size_of_code = 4, num_of_colors = 6
+  @spec = GameSpecification.new
+  @spec.choose = {master: master, solver: solver, size_of_code: size_of_code, num_of_colors: num_of_colors}
 
-    it "you can find the stored instance by the id" do
-      gfound = Game.find @g1.id
-      gfound.should be @g1
-    end
-
-    it "the ids are different" do
-      @g1.id.should_not == @g2.id
-    end
-  end
 end
-
 describe "initialize Game" do
-  context "Computer vs Mensch" do
-    it "works" do
-      @g = Game.new
-      @g.properties = {master: "Computer", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
-    end
+  before :each do
+    create_spec
   end
   context "Computer vs Computer" do
-    it "works" do
-      @g = Game.new
+    it "can be initialized" do
+      @g = Game.new @spec
+      @g.board.should be_instance_of Board
+      @g.solver.should be_instance_of ComputerSolver
+      @g.master.should be_instance_of ComputerMaster
+      @g.master.secret_code.size.should == @spec.size_of_code
+      @g.game_spec.master.should == @spec.master
+    end
+    it "can play a game" do
       begin
-        @g.properties = {master: "Computer", solver: "Computer", size_of_code: "4", num_of_colors: "6"}
+        @g = Game.new @spec
       rescue => details
         details.should
       end
       @g.start
       until @g.solved
         @g.guess
+        puts "."
       end
     end
   end
   context "Mensch vs Computer" do
     it "is not implemented yet" do
-      @g = Game.new
+      create_spec("Mensch", "Computer")
       begin
-        @g.properties = {master: "Mensch", solver: "Computer", size_of_code: "4", num_of_colors: "6"}
+        @g = Game.new @spec
+        fail "should not be called"
       rescue => details
         details.should be_a RuntimeError
       end
@@ -54,10 +47,10 @@ describe "initialize Game" do
     end
   end
   context "Mensch vs Mensch" do
+    create_spec("Mensch", "Mensch")
     it "makes no sence- > throws an error" do
-      @g = Game.new
       begin
-        @g.properties = {master: "Mensch", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
+        @g = Game.new @spec
       rescue => details
         details.should be_a RuntimeError
       end

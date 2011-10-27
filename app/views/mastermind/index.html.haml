@@ -9,16 +9,16 @@
   = form_for :game, {url: mastermind_start_game_path }do |f|
     %tr
       %td= f.label :master, "Master:"
-      %td= f.select :master, @game.player_values, {selected: @game.master}, {class: "player"}
+      %td= f.select :master, @game_spec.player_values, {selected: @game_spec.master}, {class: "player"}
     %tr
       %td= f.label :solver, "Codeknacker:"
-      %td= f.select :solver,  @game.player_values, {selected: @game.solver}, {class: "player"}
+      %td= f.select :solver,  @game_spec.player_values, {selected: @game_spec.solver}, {class: "player"}
     %tr
       %td= f.label :size_of_code, "Codelänge:"
-      %td= f.select :size_of_code, @game.color_sizes, {selected: @game.size_of_code}
+      %td= f.select :size_of_code, @game_spec.color_sizes, {selected: @game_spec.size_of_code}
     %tr
       %td= f.label :num_of_colors, "Anzahl Farben:"
-      %td= f.select :num_of_colors, @game.color_sizes, {selected: @game.num_of_colors}
+      %td= f.select :num_of_colors, @game_spec.color_sizes, {selected: @game_spec.num_of_colors}
     %tr
       %td
       %td= f.submit "weiter"

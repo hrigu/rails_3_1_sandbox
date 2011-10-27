@@ -1,130 +1,79 @@
-$game_instances ||= {}
-$game_next_id ||=0;
+require File.dirname(__FILE__) + '/game_strategy'
 
 class Game
-  attr_reader :player_values, :code_sizes, :color_sizes
-  attr_reader :master, :solver, :size_of_code, :num_of_colors, :colors
-  attr_accessor :solved
-  attr_reader :id
+
+  COMPUTER_MENSCH = "Computer-Mensch"
+  COMPUTER_COMPUTER = "Computer-Computer"
+  MENSCH_COMPUTER = "Mensch-Computer"
 
 
-  def initialize
-    @player_values = %w[Computer Mensch]
-    @master = @player_values[0]
-    @solver = @player_values[1]
-    @code_sizes = %w[1 2 3 4 5 6]
-    @color_sizes = %w[1 2 3 4 5 6 7 8]
-    @size_of_code = @code_sizes[3].to_i
-    @num_of_colors = @color_sizes[5].to_i
+  attr_reader:game_spec
 
-    @id = $game_next_id
-    $game_instances[@id] = self
+  def initialize game_spec
 
-    $game_next_id += 1
-  end
+    @game_spec = game_spec
+    #only to load the classes...TODO: find better way
+    Mastermind.new
 
-  def properties= options = {master: "Computer", solver: "Mensch", size_of_code: "4", num_of_colors: "6"}
-    @master, @solver = options[:master], options[:solver]
-    @size_of_code, @num_of_colors = options[:size_of_code].to_i, options[:num_of_colors].to_i
-    @colors = %w[green yellow blue red magenta black white orange][0, num_of_colors]
-    @solved = false
 
-    if master == "Computer"
-      if solver == "Mensch"
-        @strategy = ComputerAgainstHumanStrategy.new self
+    if game_spec.master == "Computer"
+      if game_spec.solver == "Mensch"
+        @strategy = ComputerAgainstHumanStrategy.new game_spec, COMPUTER_MENSCH
       else
-        @strategy = ComputerAgainstComputerStrategy.new self
+        @strategy = ComputerAgainstComputerStrategy.new game_spec, COMPUTER_COMPUTER
       end
     else
-      if solver == "Mensch"
+      if game_spec.solver == "Mensch"
         raise "Mensch vs Mensch nicht implementiert. Holt euch ein Mastermind aus der Ding-Welt!"
       else
-        raise "Mensch vs Computer noch nicht implementiert"
+        @strategy = HumanAgainstComputerStrategy.new game_spec, MENSCH_COMPUTER
       end
     end
+    GameHolder.add(self)
   end
 
+
+  #aktionen
   def start
     @strategy.start
   end
 
-  def guess args = nil
-    @strategy.guess args
+  def guess guess = nil
+    @strategy.guess guess
+  end
+
+  #end aktionen
+
+  def board
+    @strategy.board
+  end
+
+  def master
+    @strategy.master
+  end
+
+  def solver
+    @strategy.solver
+  end
+
+  def type
+    @strategy.type
+  end
+
+  def secret_code
+    @strategy.master.secret_code
   end
 
   def possible_solutions
     @strategy.possible_solutions
   end
 
-  def self.find id
-    $game_instances[id]
+  def solved
+    @strategy.master.solved
   end
 
-  def self.delete id
-    $game_instances.each do |key, value|
-      puts key
-    end
-    $game_instances.delete id
-    $game_instances.each do |key, value|
-      puts key
-    end
-  end
-
-
-  def mastermind
-    @strategy.mastermind if @strategy
-  end
-
-end
-
-class GameStrategy
-  attr_reader :mastermind
-
-  def initialize game
-    @game = game
-  end
-
-  def start
-    @mastermind = Mastermind.new @game.colors, @game.size_of_code
-  end
-
-  def possible_solutions
-    []
-  end
-end
-
-class ComputerAgainstHumanStrategy < GameStrategy
-
-  def guess args
-    guess = Array.new @game.size_of_code
-    args.each_pair { |key, value| guess[key.to_i] = value }
-    @game.solved = @mastermind.guess guess
-  end
-
-end
-
-class ComputerAgainstComputerStrategy < GameStrategy
-
-  def start
-    super
-    @solver = Solver.new @game.colors, @game.size_of_code
-    @current_guess = @solver.make_guess
-  end
-
-  def guess args = nil
-    @current_guess = @solver.make_guess
-
-    puts @current_guess.inspect
-    @game.solved = @mastermind.guess @current_guess
-    unless @game.solved
-      @solver.reduce_solutions @mastermind.current_guess
-    else
-      @solver = nil     #to save memory
-    end
-  end
-
-  def possible_solutions
-    @solver.possible_solutions
+  def id
+    @game_spec.id
   end
 
 end

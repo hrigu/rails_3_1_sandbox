@@ -28,15 +28,15 @@ end
 
 RSpec::Matchers.define :correlate do |expected_colors|
   match do |color_set|
-    color_set.to_a should =~ expected_colors
-    #ok = true
-    #expected_colors.each do |color|
-    #  unless color_set.include? color
-    #    ok = false
-    #    break
-    #  end
-    #end
-    #ok
+#    color_set.to_a should =~ expected_colors
+    ok = true
+    expected_colors.each do |color|
+      unless color_set.include? color
+        ok = false
+        break
+      end
+    end
+    ok
   end
 
 end

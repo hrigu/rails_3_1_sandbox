@@ -1,8 +1,10 @@
 require "spec_helper"
-#require File.dirname(__FILE__) + '/../../lib/solver/solver'
+require File.expand_path(Rails.root) + '/lib/mastermind/solver/computer_solver'
+require File.expand_path(Rails.root) + '/lib/mastermind/mastermind'
+
 
 def init_solver(possible_colors)
-  Solver.new possible_colors
+  ComputerSolver.new possible_colors, 4
 end
 
 describe "Compute the possible Solutions" do
@@ -55,7 +57,7 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
   describe "and 2 positions" do
 
     before(:each) do
-      @solver = Solver.new %w[a b c], 2
+      @solver = ComputerSolver.new %w[a b c], 2
       @solver.possible_solutions.size.should == 9
     end
     context "one black" do
@@ -89,7 +91,7 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
   end
   describe "and 3 positions" do
     before(:each) do
-      @solver = Solver.new %w[a b c], 3
+      @solver = ComputerSolver.new %w[a b c], 3
       @solver.possible_solutions.size.should == 27
     end
     context "one black" do

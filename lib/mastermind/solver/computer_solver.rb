@@ -1,11 +1,11 @@
-require File.dirname(__FILE__) + '/mastermind'
 
-require File.dirname(__FILE__) + '/solver/white_solver'
-require File.dirname(__FILE__) + '/solver/black_solver'
-require File.dirname(__FILE__) + '/solver/empty_positions_filler'
-require File.dirname(__FILE__) + '/solver/solution_disposer'
-require File.dirname(__FILE__) + '/solver/guess_strategy'
-class Solver
+require File.dirname(__FILE__) + '/white_solver'
+require File.dirname(__FILE__) + '/black_solver'
+require File.dirname(__FILE__) + '/empty_positions_filler'
+require File.dirname(__FILE__) + '/solution_disposer'
+require File.dirname(__FILE__) + '/guess_strategy'
+
+class ComputerSolver
 
   def initialize possible_colors, length_of_code = 4
     @possible_colors = possible_colors

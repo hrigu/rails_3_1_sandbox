@@ -8,7 +8,7 @@
     Neuer Versuch:
   .right
     = form_for :guess, {url: mastermind_guess_path }do |f|
-      - if @game.solver == "Mensch"
+      - if @game.type == Game::COMPUTER_MENSCH
         .bank
           - @game.size_of_code.times do |i|
             .cell.target{id: "pos_#{i}"}
