@@ -135,6 +135,9 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
           @solver.reduce_solutions guess
           @solver.possible_solutions.should include %W[a a b]
           @solver.possible_solutions.should include %W[a c a]
+          @solver.find_all(["a"]).size.should == 2
+          @solver.find_all([nil, "a"]).size.should == 2
+          @solver.find_all([nil, nil, nil]).size.should == 6
           @solver.possible_solutions.size.should == 6
         end
       end

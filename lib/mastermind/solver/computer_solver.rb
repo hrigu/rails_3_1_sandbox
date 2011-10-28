@@ -7,6 +7,8 @@ require File.dirname(__FILE__) + '/guess_strategy'
 
 class ComputerSolver
 
+  attr_reader :solution_disposer
+
   def initialize possible_colors, length_of_code = 4
     @possible_colors = possible_colors
     @white_solver = WhiteSolver.new
@@ -23,6 +25,10 @@ class ComputerSolver
 
   def include? code
     @solution_disposer.include? code
+  end
+
+  def find_all code
+    c = @solution_disposer.find_all code
   end
 
   def reduce_solutions guess

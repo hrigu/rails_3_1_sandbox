@@ -31,6 +31,21 @@ class SolutionDisposer
     @possible_solutions.include? code
   end
 
+  def find_all code
+    candidates = @possible_solutions.to_a.sort
+    found = candidates.find_all do |candidate|
+      code.each_with_index do |current_color, i|
+        if current_color
+          if candidate[i] != current_color
+            false
+            break
+          end
+        end
+        true
+      end
+    end
+  end
+
   def init_new_round
     if @current_possible_solutions
       new_poss_solutions = Set.new
