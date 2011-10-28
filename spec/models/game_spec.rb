@@ -34,12 +34,7 @@ describe "initialize Game" do
   context "Mensch vs Computer" do
     it "is not implemented yet" do
       create_spec("Mensch", "Computer")
-      begin
         @g = Game.new @spec
-        fail "should not be called"
-      rescue => details
-        details.should be_a RuntimeError
-      end
       #@g.start
       #until @g.solved
       #  @g.guess

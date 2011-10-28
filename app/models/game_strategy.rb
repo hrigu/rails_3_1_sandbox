@@ -22,6 +22,10 @@ class GameStrategy
 
 end
 
+##
+#  master: computer
+#  solver: human
+##
 class ComputerAgainstHumanStrategy < GameStrategy
 
   def initialize game_spec, type
@@ -32,9 +36,9 @@ class ComputerAgainstHumanStrategy < GameStrategy
   end
 
   def guess guess
-    @solver.current_guess = guess
-    @board.guess = guess
     unless @master.solved
+      @solver.current_guess = guess
+      @board.guess = guess
       eval = @master.evaluate guess
       @board.eval = eval
     else
@@ -44,6 +48,10 @@ class ComputerAgainstHumanStrategy < GameStrategy
 
 end
 
+##
+#  master: computer
+#  solver: computer
+##
 class ComputerAgainstComputerStrategy < GameStrategy
 
   def initialize game_spec, type
@@ -51,18 +59,16 @@ class ComputerAgainstComputerStrategy < GameStrategy
     @master = ComputerMaster.new board
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
     @master.build_secret_code
-  end                                                 ^
+  end
 
   def start
     super
   end
 
   def guess args = nil
-    current_guess = solver.make_guess
-
-    board.guess = current_guess
-
     unless @master.solved
+      current_guess = solver.make_guess
+      board.guess = current_guess
       eval = @master.evaluate current_guess
       board.eval = eval
       @solver.reduce_solutions board.current_guess
@@ -78,21 +84,31 @@ class ComputerAgainstComputerStrategy < GameStrategy
 
 end
 
+##
+#  Master: human
+#  Solver: computer
+##
 class HumanAgainstComputerStrategy < GameStrategy
+
+  def initialize game_spec, type
+    super game_spec, type
+    @master = HumanMaster.new board
+    @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
+  end
 
   def start
     super
-    @solver = ComputerSolver.new @game_spec.colors, @game_spec.size_of_code
-    @current_guess = @solver.make_guess
   end
 
-  def guess args = nil
-    @current_guess = @solver.make_guess
+  def guess args =
+    current_guess = solver.make_guess
 
-    puts @current_guess.inspect
-    @game_spec.solved = @mastermind.guess @current_guess
-    unless @game_spec.solved
-      @solver.reduce_solutions @mastermind.current_guess
+    board.guess = current_guess
+
+    unless @master.solved
+      eval = @master.evaluate current_guess
+      board.eval = eval
+      @solver.reduce_solutions board.current_guess
     else
       @solver = nil #to save memory
     end
