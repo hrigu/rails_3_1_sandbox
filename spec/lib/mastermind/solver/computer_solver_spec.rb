@@ -78,13 +78,12 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
     end
     context "one white" do
       context "guess is [a b] and bewertung is [0, 1]" do
-        #TODO fix this
         it "should be" do
           guess = Guess.new %w[a b]
           guess.num_of_whites = 1
-#          @solver.reduce_solutions guess
-#          @solver.possible_solutions.should == [%w[b c], %w[c a]]
-#          @solver.possible_solutions.size.should == 2
+          @solver.reduce_solutions guess
+          @solver.possible_solutions.size.should == 2
+          @solver.possible_solutions.sort.should == [%w[b c], %w[c a]]
         end
       end
     end
@@ -127,7 +126,6 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
         end
       end
     end
-    #TODO Fix this
     context "[1 1]" do
       context "guess is [a b c]" do
         it "should be" do
@@ -135,11 +133,9 @@ describe "Reduce the possible solutions. Initialized with 3 colors" do
           guess.num_of_blacks = 1
           guess.num_of_whites = 1
           @solver.reduce_solutions guess
-
-          @solver.possible_solutions.each do |s|
-            puts s.inspect
-          end
-#          @solver.possible_solutions.size.should == 6
+          @solver.possible_solutions.should include %W[a a b]
+          @solver.possible_solutions.should include %W[a c a]
+          @solver.possible_solutions.size.should == 6
         end
       end
     end

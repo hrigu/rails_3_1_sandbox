@@ -38,7 +38,7 @@ class ComputerSolver
   end
 
   def possible_solutions
-    @solution_disposer.possible_solutions.to_a
+    @solution_disposer.possible_solutions.to_a.sort
   end
 
 

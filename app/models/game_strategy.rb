@@ -51,7 +51,7 @@ class ComputerAgainstComputerStrategy < GameStrategy
     @master = ComputerMaster.new board
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
     @master.build_secret_code
-  end
+  end                                                 ^
 
   def start
     super
