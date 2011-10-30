@@ -9,7 +9,6 @@ describe "Mensch vs Computer" do
     @g = Game.new game_spec1
     secret_code = [game_spec1.colors[0], game_spec1.colors[1]]
 
-    @g.start
   #  @g.secret_code = secret_code
     pending "after implementing of HumanComputerStrategy"
 

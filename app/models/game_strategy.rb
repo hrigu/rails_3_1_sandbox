@@ -9,9 +9,6 @@ class GameStrategy
     @board = Board.new game_spec.colors, game_spec.size_of_code
   end
 
-  def start
-  end
-
   def possible_solutions
     []
   end
@@ -35,7 +32,7 @@ class ComputerAgainstHumanStrategy < GameStrategy
     @master.build_secret_code
   end
 
-  def guess guess
+  def put guess
     unless @master.solved
       @solver.current_guess = guess
       @board.guess = guess
@@ -61,11 +58,7 @@ class ComputerAgainstComputerStrategy < GameStrategy
     @master.build_secret_code
   end
 
-  def start
-    super
-  end
-
-  def guess args = nil
+  def put args = nil
     unless @master.solved
       current_guess = solver.make_guess
       board.guess = current_guess
@@ -96,11 +89,7 @@ class HumanAgainstComputerStrategy < GameStrategy
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
   end
 
-  def start
-    super
-  end
-
-  def guess args =
+  def put args =
     current_guess = solver.make_guess
 
     board.guess = current_guess

@@ -33,13 +33,9 @@ class Game
   end
 
 
-  #aktionen
-  def start
-    @strategy.start
-  end
-
-  def guess guess = nil
-    @strategy.guess guess
+  #actions
+  def put info = nil
+    @strategy.put info
   end
 
   #end aktionen

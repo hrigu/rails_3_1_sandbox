@@ -23,7 +23,7 @@ $(document).ready(function() {
                 droppedOn.attr('color', background_color);
                 droppedOn.css({"background-color": background_color});
                 var index = droppedOn[0].id.match(/\d+/);
-                $("#guess_" + index).val(background_color);
+                $("#put_" + index).val(background_color);
 
             },
             hoverClass: 'drophover'

@@ -4,7 +4,7 @@ Rails31Sandbox::Application.routes.draw do
 
   match 'mastermind' => 'mastermind#index'
   match 'mastermind/start_game' => 'mastermind#start_game'
-  match 'mastermind/guess' => 'mastermind#guess'
+  match 'mastermind/put' => 'mastermind#put'
   match 'admin' => 'admin#index'
   match 'admin/delete_game_instances' => 'admin#delete_game_instances'
   match 'admin/delete_game' => 'admin#delete_game'

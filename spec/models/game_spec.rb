@@ -24,9 +24,8 @@ describe "initialize Game" do
       rescue => details
         details.should
       end
-      @g.start
       until @g.solved
-        @g.guess
+        @g.put
         puts "."
       end
     end

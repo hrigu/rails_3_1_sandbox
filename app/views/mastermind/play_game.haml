@@ -7,7 +7,7 @@
   .left
     Neuer Versuch:
   .right
-    = form_for :guess, {url: mastermind_guess_path }do |f|
+    = form_for :put, {url: mastermind_put_path }do |f|
       - if @game.type == Game::COMPUTER_MENSCH
         .bank
           - @game.board.num_of_elements.times do |i|

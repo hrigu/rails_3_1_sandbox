@@ -23,8 +23,6 @@ class MastermindController < ApplicationController
 #      end
     end
     @game = Game.new game_spec
-    @game.start
-
     puts @game.secret_code
 
     respond_to do |format|
@@ -41,10 +39,10 @@ class MastermindController < ApplicationController
   #
   #end
 
-  def guess
+  def put
     @game = GameHolder.find session[:game_id]
     if @game
-      @game.guess build_guess(params[:guess]) #if params[:guess]
+      @game.put build_guess(params[:put]) #if params[:guess]
       begin
       rescue => detail
         puts detail
@@ -61,8 +59,10 @@ class MastermindController < ApplicationController
 
   def build_guess params
     return nil unless params
+    p params
     guess = Array.new params.size
     params.each_pair { |key, value| guess[key.to_i] = value }
+    p guess
     guess
   end
 
