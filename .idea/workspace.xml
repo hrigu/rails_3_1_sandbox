@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list id="f7144581-9042-4d48-aee8-a64a01667a7d" name="Default" comment="" />
     <list default="true" id="1b5edda0-2804-4543-9163-9d931cc53942" name="not changed" comment="remove comments">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mastermind/_internal_infos.html.haml" afterPath="$PROJECT_DIR$/app/views/mastermind/_internal_infos.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game_specification.rb" afterPath="$PROJECT_DIR$/app/models/game_specification.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mastermind/master/computer_master.rb" afterPath="$PROJECT_DIR$/lib/mastermind/master/computer_master.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/game_holder_spec.rb" afterPath="$PROJECT_DIR$/spec/models/game_holder_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/game_spec.rb" afterPath="$PROJECT_DIR$/spec/models/game_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb" afterPath="$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb" />
     </list>
     <ignored path="rails_3_1_sandbox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,46 +32,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="43" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mastermind_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="103" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_internal_infos.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/mastermind/_internal_infos.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="game.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="197" selection-end="206" vertical-scroll-proportion="0.0">
+            <state line="28" column="0" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="human_solver.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/human_solver.rb">
+      <file leaf-file-name="game_strategy.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/game_strategy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="230" selection-end="230" vertical-scroll-proportion="0.33106962">
+            <state line="88" column="0" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="human_master.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/mastermind/master/human_master.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mensch_vs_computer_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="23" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_specification.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/game_specification.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/game_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="106" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_holder_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/game_holder_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="49" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mastermind_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="437" selection-end="437" vertical-scroll-proportion="0.1802721">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution_disposer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/solution_disposer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="computer_solver.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/computer_solver.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,22 +136,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/spec/lib/mastermind/solver/computer_solver_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/mastermind/mastermind.rb" />
-        <option value="$PROJECT_DIR$/lib/mastermind/master/human_master.rb" />
-        <option value="$PROJECT_DIR$/app/models/game_strategy.rb" />
-        <option value="$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/models/game_spec.rb" />
-        <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$USER_HOME$/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/kconv.rb" />
         <option value="$USER_HOME$/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/optparse.rb" />
         <option value="$APPLICATION_HOME_DIR$/rubystubs19/nkf.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/mastermind/play_game.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/mastermind.js" />
-        <option value="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/mastermind/_internal_infos.html.haml" />
         <option value="$PROJECT_DIR$/lib/mastermind/solver/human_solver.rb" />
+        <option value="$PROJECT_DIR$/lib/mastermind/master/computer_master.rb" />
+        <option value="$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/mastermind/solver/solution_disposer.rb" />
+        <option value="$PROJECT_DIR$/app/models/game.rb" />
+        <option value="$PROJECT_DIR$/app/models/game_specification.rb" />
+        <option value="$PROJECT_DIR$/spec/models/game_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/models/game_holder_spec.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
       </list>
     </option>
   </component>
@@ -267,47 +318,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mastermind" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,20 +359,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,28 +395,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -969,17 +966,17 @@
       <method />
     </configuration>
     <list size="11">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 2 positions one white guess is [a b] and bewertung is [0, 1] should be" />
-      <item index="1" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 3 positions [1 1]" />
-      <item index="2" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 3 positions [1 1] guess is [a b c] should be" />
-      <item index="3" class="java.lang.String" itemvalue="RSpec.Mensch vs Computer" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.initialize Game Computer vs Computer can play a game" />
-      <item index="5" class="java.lang.String" itemvalue="Rails.Development: rails_3_1_sandbox" />
-      <item index="6" class="java.lang.String" itemvalue="Rails.Production: rails_3_1_sandbox" />
-      <item index="7" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="8" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="9" class="java.lang.String" itemvalue="Rake.watchr" />
-      <item index="10" class="java.lang.String" itemvalue="Ruby.RSpec: Spork DRb server" />
+      <item index="0" class="java.lang.String" itemvalue="Rails.Development: rails_3_1_sandbox" />
+      <item index="1" class="java.lang.String" itemvalue="Rails.Production: rails_3_1_sandbox" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.watchr" />
+      <item index="5" class="java.lang.String" itemvalue="Ruby.RSpec: Spork DRb server" />
+      <item index="6" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 2 positions one white guess is [a b] and bewertung is [0, 1] should be" />
+      <item index="7" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 3 positions [1 1]" />
+      <item index="8" class="java.lang.String" itemvalue="RSpec.Reduce the possible solutions. Initialized with 3 colors and 3 positions [1 1] guess is [a b c] should be" />
+      <item index="9" class="java.lang.String" itemvalue="RSpec.Mensch vs Computer" />
+      <item index="10" class="java.lang.String" itemvalue="RSpec.initialize Game Computer vs Computer can play a game" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -1043,9 +1040,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2678951" sideWeight="0.5587829" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26879433" sideWeight="0.85753804" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14246197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44058746" sideWeight="0.99858356" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26879433" sideWeight="0.47994468" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52005535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42323652" sideWeight="0.99858356" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1135,68 +1132,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/mastermind/mastermind.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="313" selection-end="313" vertical-scroll-proportion="0.21367522" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mastermind/master/human_master.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="198" selection-end="198" vertical-scroll-proportion="0.4871795" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/kconv.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="44" selection-start="2462" selection-end="2462" vertical-scroll-proportion="0.25356126" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/optparse.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="18" selection-start="9042" selection-end="9042" vertical-scroll-proportion="0.33903134" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs19/nkf.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="18" selection-start="9467" selection-end="9467" vertical-scroll-proportion="0.5925926" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/computer_solver.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="918" selection-end="918" vertical-scroll-proportion="0.041899443" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/game_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="818" selection-end="818" vertical-scroll-proportion="0.30789474" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="58" selection-end="58" vertical-scroll-proportion="0.118421055" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/game_strategy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="50" selection-start="818" selection-end="818" vertical-scroll-proportion="0.55" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/mastermind.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="23" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="197" selection-end="206" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="103" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/mastermind/play_game.haml">
@@ -1220,7 +1158,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/human_solver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="230" selection-end="230" vertical-scroll-proportion="0.33106962">
+        <state line="13" column="5" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/mastermind/master/computer_master.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="2" selection-start="124" selection-end="124" vertical-scroll-proportion="0.19430052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/mastermind/master/human_master.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/computer_solver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/solution_disposer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game_strategy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/mensch_vs_computer_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="23" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game_specification.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/game_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="106" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/game_holder_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="49" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="437" selection-end="437" vertical-scroll-proportion="0.1802721">
           <folding />
         </state>
       </provider>

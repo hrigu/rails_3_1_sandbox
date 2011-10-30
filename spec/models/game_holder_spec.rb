@@ -4,11 +4,8 @@ describe "Storing Games" do
   context "when two instances are stored" do
     before(:each) do
       map = {:master => "Computer", :solver => "Computer", :size_of_code => "4", :num_of_colors => "6"}
-      game_spec1 = GameSpecification.new
-      game_spec1.choose = map
-      game_spec2 = GameSpecification.new
-      game_spec2.choose = map
-
+      game_spec1 = GameSpecification.new   map
+      game_spec2 = GameSpecification.new   map
 
       @g1 = Game.new game_spec1
       @g2 = Game.new game_spec2

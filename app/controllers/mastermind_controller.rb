@@ -15,7 +15,7 @@ class MastermindController < ApplicationController
     game_spec = GameHolder.find_spec (session[:game_id])
     if params[:game]
 #      begin
-    game_spec.choose = (params[:game])
+    game_spec.choose (params[:game])
 #      rescue => detail
 #        flash[:notice] = detail.message
 #        redirect_to mastermind_path

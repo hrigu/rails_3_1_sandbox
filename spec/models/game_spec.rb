@@ -2,7 +2,7 @@ require 'spec_helper'
 
 def create_spec master = "Computer", solver = "Computer", size_of_code = 4, num_of_colors = 6
   @spec = GameSpecification.new
-  @spec.choose = {master: master, solver: solver, size_of_code: size_of_code, num_of_colors: num_of_colors}
+  @spec.choose({master: master, solver: solver, size_of_code: size_of_code, num_of_colors: num_of_colors})
 
 end
 describe "initialize Game" do

@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + '/../board/board'
 class ComputerMaster
   attr_reader :solved
   attr_accessor :secret_code
+
   def initialize board
     @board = board
     @evaluator = Evaluator.new
