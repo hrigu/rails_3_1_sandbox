@@ -6,6 +6,13 @@ class Game
   COMPUTER_COMPUTER = "Computer-Computer"
   MENSCH_COMPUTER = "Mensch-Computer"
 
+  #states
+  WAIT_FOR_SECRET_CODE = :wait_for_secret_code
+  WAIT_FOR_NEW_GUESS = :wait_for_new_guess
+  WAIT_FOR_EVALUATION = :wait_for_evaluation
+  SOLVED = :solved
+
+
 
   attr_reader:game_spec
 
@@ -62,6 +69,10 @@ class Game
 
   def possible_solutions
     @strategy.possible_solutions
+  end
+
+  def state
+    @strategy.state
   end
 
   def solved

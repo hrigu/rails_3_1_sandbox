@@ -24,8 +24,13 @@ class MastermindController < ApplicationController
     end
     @game = Game.new game_spec
 
+    page = "play_game"
+    if @game.state == Game::WAIT_FOR_SECRET_CODE
+      page = "add_secret_code"
+    end
+
     respond_to do |format|
-      format.html { render "play_game" }
+      format.html { render page }
     end
   end
 
@@ -47,7 +52,13 @@ class MastermindController < ApplicationController
         puts detail
         flash[:notice] = "could not make a guess, because I don't have possible solutions any more'"
       end
-      String next_page = @game.solved ? "game_solved" : "play_game"
+
+      next_page = "play_game"
+      if @game.state == Game::SOLVED
+        next_page = "game_solved"
+      elsif @game.state == Game::WAIT_FOR_EVALUATION
+        next_page = "evaluate"
+      end
       respond_to do |format|
         format.html { render next_page }
       end

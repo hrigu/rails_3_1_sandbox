@@ -1,0 +1,8 @@
+- content_for :title do
+  Mastermind - play...
+.master
+  = render partial: "code", locals: {hidden: true}
+.solver
+  = render "board"
+
+= render "internal_infos"

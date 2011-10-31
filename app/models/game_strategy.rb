@@ -1,6 +1,6 @@
 class GameStrategy
 
-  attr_reader :type
+  attr_reader :type, :state
   attr_reader :master, :solver, :board
 
   def initialize game_spec, type
@@ -17,6 +17,8 @@ class GameStrategy
     raise "doesn't make sense for #{name}'"
   end
 
+
+
 end
 
 ##
@@ -30,6 +32,7 @@ class ComputerAgainstHumanStrategy < GameStrategy
     @master = ComputerMaster.new board
     @solver = HumanSolver.new game_spec.colors, game_spec.size_of_code
     @master.build_secret_code
+    @state = Game::WAIT_FOR_NEW_GUESS
   end
 
   def put guess
@@ -39,6 +42,7 @@ class ComputerAgainstHumanStrategy < GameStrategy
       eval = @master.evaluate guess
       @board.eval = eval
     else
+      @state = Game::SOLVED
       @solver = nil #to save memory
     end
   end
@@ -56,6 +60,7 @@ class ComputerAgainstComputerStrategy < GameStrategy
     @master = ComputerMaster.new board
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
     @master.build_secret_code
+    @state = Game::WAIT_FOR_NEW_GUESS
   end
 
   def put args = nil
@@ -66,6 +71,7 @@ class ComputerAgainstComputerStrategy < GameStrategy
       board.eval = eval
       @solver.reduce_solutions board.current_guess
     else
+      @state = Game::SOLVED
       @solver = nil #to save memory
     end
   end
@@ -89,7 +95,7 @@ class HumanAgainstComputerStrategy < GameStrategy
     super game_spec, type
     @master = HumanMaster.new board
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
-    @state = "wait_for_secret_code"
+    @state = Game::WAIT_FOR_SECRET_CODE
   end
 
 
@@ -97,22 +103,25 @@ class HumanAgainstComputerStrategy < GameStrategy
 
   def put args
     unless @master.solved
-      if (@state == "wait_for_secret_code")
+      if (@state == Game::WAIT_FOR_SECRET_CODE)
         @master.secret_code = args
-        @state = "wait_for_make_guess"
-      elsif @state == "wait_for_make_guess"
+        @state = Game::WAIT_FOR_NEW_GUESS
+      elsif @state == Game::WAIT_FOR_NEW_GUESS
         current_guess = @solver.make_guess
         @board.guess = current_guess
-        @state = "wait_for_evaluation"
-      elsif @state == "wait_for_evaluation"
+        @state = Game::WAIT_FOR_EVALUATION
+      elsif @state == Game::WAIT_FOR_EVALUATION
         @master.evaluation = args
         eval = @master.evaluate @board.current_guess
         @board.eval = eval
         @solver.reduce_solutions @board.current_guess
-        @state = "wait_for_make_guess"
+        @state = Game::WAIT_FOR_NEW_GUESS
       else
-        @solver = nil #to save memory
+        raise "could not understand state #{@state}"
       end
+    else
+      @state = Game::SOLVED
+      @solver = nil #to save memory
     end
   end
 
