@@ -7,7 +7,7 @@ end
 
 class Board
   attr_reader :guesses, :possible_colors, :num_of_elements
-  attr_accessor :hidden_code
+  #attr_accessor :hidden_code
 
   def initialize possible_colors, num_of_elements = 4
     @possible_colors = possible_colors

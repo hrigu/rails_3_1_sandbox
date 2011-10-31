@@ -18,7 +18,7 @@ class Mastermind
 
   def play
     hidden_code = master.build_secret_code
-    board.hidden_code = hidden_code
+#    board.hidden_code = hidden_code
     begin
       master.solved
       guess = solver.make_guess

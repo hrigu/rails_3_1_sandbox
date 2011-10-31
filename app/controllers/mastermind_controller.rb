@@ -12,10 +12,10 @@ class MastermindController < ApplicationController
   end
 
   def start_game
-    game_spec = GameHolder.find_spec (session[:game_id])
+    game_spec = GameHolder.find_spec session[:game_id]
     if params[:game]
 #      begin
-    game_spec.choose (params[:game])
+    game_spec.choose params[:game]
 #      rescue => detail
 #        flash[:notice] = detail.message
 #        redirect_to mastermind_path
@@ -23,7 +23,6 @@ class MastermindController < ApplicationController
 #      end
     end
     @game = Game.new game_spec
-    puts @game.secret_code
 
     respond_to do |format|
       format.html { render "play_game" }

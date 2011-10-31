@@ -17,11 +17,11 @@ describe Mastermind do
   end
 
   it "play one round" do
-    hidden_code = %w[a a c e]
+    secret_code = %w[a a c e]
     guess = %w[a a c e]
     master = double "master"
     master.stub(:build_secret_code) do
-      hidden_code
+      secret_code
     end
     master.stub(:solved) do
       true

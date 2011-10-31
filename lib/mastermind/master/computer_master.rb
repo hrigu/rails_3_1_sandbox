@@ -28,10 +28,10 @@ end
 
 class Evaluator
 
-  def evaluate original_code, guess
+  def evaluate secret_code, guess
     code = []
     rest_of_guess = []
-    original_code.each do |color|
+    secret_code.each do |color|
       code << [color, false]
     end
 

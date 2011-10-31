@@ -83,23 +83,36 @@ end
 ##
 class HumanAgainstComputerStrategy < GameStrategy
 
+
+
   def initialize game_spec, type
     super game_spec, type
     @master = HumanMaster.new board
     @solver = ComputerSolver.new game_spec.colors, game_spec.size_of_code
+    @state = "wait_for_secret_code"
   end
 
-  def put args =
-    current_guess = solver.make_guess
 
-    board.guess = current_guess
 
+
+  def put args
     unless @master.solved
-      eval = @master.evaluate current_guess
-      board.eval = eval
-      @solver.reduce_solutions board.current_guess
-    else
-      @solver = nil #to save memory
+      if (@state == "wait_for_secret_code")
+        @master.secret_code = args
+        @state = "wait_for_make_guess"
+      elsif @state == "wait_for_make_guess"
+        current_guess = @solver.make_guess
+        @board.guess = current_guess
+        @state = "wait_for_evaluation"
+      elsif @state == "wait_for_evaluation"
+        @master.evaluation = args
+        eval = @master.evaluate @board.current_guess
+        @board.eval = eval
+        @solver.reduce_solutions @board.current_guess
+        @state = "wait_for_make_guess"
+      else
+        @solver = nil #to save memory
+      end
     end
   end
 

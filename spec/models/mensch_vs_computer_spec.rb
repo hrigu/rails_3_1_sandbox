@@ -1,15 +1,26 @@
 require 'spec_helper'
 
+
+def create_spec size_of_code = 4, num_of_colors = 6
+  @spec = GameSpecification.new({master: "Mensch", solver: "Computer", size_of_code: size_of_code, num_of_colors: num_of_colors})
+end
+
 describe "Mensch vs Computer" do
+  before :each do ||
+    create_spec
+  end
   it "works" do
-    game_spec = GameSpecification.new ({:master => "Mensch", :solver => "Computer", :size_of_code => "2", :num_of_colors => "2"})
-
-    @g = Game.new game_spec
-    secret_code = [game_spec.colors[0], game_spec.colors[1]]
-
-  #  @g.secret_code = secret_code
-#    pending "after implementing of HumanComputerStrategy"
-
-#    @g.mastermind.code.should == code
+    @g = Game.new @spec
+    secret_code = [@spec.colors[0], @spec.colors[1]]
+    @g.put secret_code
+    @g.put #make guess
+    p @g.possible_solutions
+    @g.put [1, 0]
+    @g.put #make guess
+    p @g.possible_solutions
+    @g.put [2, 2]
+    @g.put #make guess
+    p @g.possible_solutions
+    @g.put [4, 0]
   end
 end
