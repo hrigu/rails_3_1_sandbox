@@ -10,7 +10,7 @@ $(document).ready(function() {
             var draggable = $(this);
             draggable.removeAttr("style");
             var index = draggable[0].id.match(/\d+/);
-            $("#guess_" + index).val("");
+            $("#put_" + index).val("");
 
         }
     });
