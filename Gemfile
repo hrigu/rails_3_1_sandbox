@@ -30,6 +30,9 @@ end
 # gem 'ruby-debug-base19x'
 # gem 'ruby-debug-ide19'
 
+gem 'state_machine'
+gem 'ruby-graphviz' #optional, only required for graphing
+
 group :production do
   gem 'pg' #for heroku
 end
@@ -52,6 +55,7 @@ group :test do
   gem 'cucumber-rails', "~> 1.0.6"
   gem 'capybara'
   gem 'mocha'
+  gem 'spinach'
 end
 
 

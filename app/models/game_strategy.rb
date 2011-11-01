@@ -18,7 +18,6 @@ class GameStrategy
   end
 
 
-
 end
 
 ##
@@ -36,19 +35,22 @@ class ComputerAgainstHumanStrategy < GameStrategy
   end
 
   def put guess
-    unless @master.solved
+    if @state == Game::WAIT_FOR_NEW_GUESS
       @solver.current_guess = guess
       @board.guess = guess
       eval = @master.evaluate guess
       @board.eval = eval
+      if @master.solved
+        @state = Game::SOLVED
+        @solver = nil #to save memory
+      end
+    elsif @state == Game::SOLVED
+      #do nothing
     else
-      @state = Game::SOLVED
-      @solver = nil #to save memory
+      raise "could not understand state #{@state}"
     end
   end
-
 end
-
 ##
 #  master: computer
 #  solver: computer
@@ -64,15 +66,21 @@ class ComputerAgainstComputerStrategy < GameStrategy
   end
 
   def put args = nil
-    unless @master.solved
+    if @state == Game::WAIT_FOR_NEW_GUESS
       current_guess = solver.make_guess
       board.guess = current_guess
       eval = @master.evaluate current_guess
       board.eval = eval
-      @solver.reduce_solutions board.current_guess
+      if @master.solved
+        @state = Game::SOLVED
+        @solver = nil #to save memory
+      else
+        @solver.reduce_solutions board.current_guess
+      end
+    elsif @state == Game::SOLVED
+      #do nothing
     else
-      @state = Game::SOLVED
-      @solver = nil #to save memory
+      raise "could not understand state #{@state}"
     end
   end
 
@@ -90,7 +98,6 @@ end
 class HumanAgainstComputerStrategy < GameStrategy
 
 
-
   def initialize game_spec, type
     super game_spec, type
     @master = HumanMaster.new board
@@ -99,33 +106,40 @@ class HumanAgainstComputerStrategy < GameStrategy
   end
 
 
-
-
   def put args
-    unless @master.solved
-      if (@state == Game::WAIT_FOR_SECRET_CODE)
-        @master.secret_code = args
-        @state = Game::WAIT_FOR_NEW_GUESS
-      elsif @state == Game::WAIT_FOR_NEW_GUESS
+    if (@state == Game::WAIT_FOR_SECRET_CODE)
+      @master.secret_code = args
+      current_guess = @solver.make_guess
+      @board.guess = current_guess
+      @state = Game::WAIT_FOR_EVALUATION
+    elsif @state == Game::WAIT_FOR_EVALUATION
+      blacks = 0
+      whites = 0
+      args.each do |color|
+        blacks += 1 if color == "black"
+        whites += 1 if color == "white"
+      end
+      @master.evaluation = [blacks, whites]
+      eval = @master.evaluate @board.current_guess
+      @board.eval = eval
+      if @master.solved
+        @state = Game::SOLVED
+        @solver = nil #to save memory
+      else
+        @solver.reduce_solutions @board.current_guess
         current_guess = @solver.make_guess
         @board.guess = current_guess
         @state = Game::WAIT_FOR_EVALUATION
-      elsif @state == Game::WAIT_FOR_EVALUATION
-        @master.evaluation = args
-        eval = @master.evaluate @board.current_guess
-        @board.eval = eval
-        @solver.reduce_solutions @board.current_guess
-        @state = Game::WAIT_FOR_NEW_GUESS
-      else
-        raise "could not understand state #{@state}"
       end
+    elsif (@state == Game::SOLVED)
+      #do nothing
     else
-      @state = Game::SOLVED
-      @solver = nil #to save memory
+      raise "could not understand state #{@state}"
     end
   end
 
   def possible_solutions
     @solver.possible_solutions
   end
+
 end

@@ -1,8 +1,21 @@
 - content_for :title do
   Mastermind - play...
 .master
-  = render partial: "code", locals: {hidden: true}
+  = render partial: "secret_code", locals: {hidden: false}
 .solver
   = render "board"
+  .left
+    Bewertung
+  .right
+    = form_for :put, {url: mastermind_put_path }do |f|
+      .bank
+        - @game.board.num_of_elements.times do |i|
+          .cell.target{id: "pos_#{i}"}
+        .space
+        - %w[black white].each do |color|
+          .cell.draggable{style: "background-color: #{color}", color: color}
+        - @game.board.num_of_elements.times do |s|
+          = f.hidden_field(s.to_s, {size: 1})
+      = f.submit "ok"
 
 = render "internal_infos"

@@ -1,7 +1,7 @@
 - content_for :title do
   Mastermind - solved
 .master
-  = render partial: "code", locals: {hidden: false}
+  = render partial: "secret_code", locals: {hidden: false}
 .solver
   = render "board"
 .left

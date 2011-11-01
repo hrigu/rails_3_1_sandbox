@@ -15,14 +15,11 @@ describe "Mensch vs Computer" do
     @g.type.should == Game::MENSCH_COMPUTER
     secret_code = [@spec.colors[0], @spec.colors[1]]
     @g.put secret_code
-    @g.put #make guess
     p @g.possible_solutions
-    @g.put [1, 0]
-    @g.put #make guess
+    @g.put %w[black]
     p @g.possible_solutions
-    @g.put [2, 2]
-    @g.put #make guess
+    @g.put %w[black black white white]
     p @g.possible_solutions
-    @g.put [4, 0]
+    @g.put %w[black black black black]
   end
 end

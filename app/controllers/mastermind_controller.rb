@@ -52,7 +52,6 @@ class MastermindController < ApplicationController
         puts detail
         flash[:notice] = "could not make a guess, because I don't have possible solutions any more'"
       end
-
       next_page = "play_game"
       if @game.state == Game::SOLVED
         next_page = "game_solved"
@@ -67,12 +66,13 @@ class MastermindController < ApplicationController
     end
   end
 
+  ##
+  #  {"0"=>"red", "1"=>"green"}  -> ["black", "green"]
+  ##
   def build_guess params
     return nil unless params
-    p params
     guess = Array.new params.size
     params.each_pair { |key, value| guess[key.to_i] = value }
-    p guess
     guess
   end
 
