@@ -1,4 +1,3 @@
-
 module Helper
   def convert_to_s code
     code.collect { |c| c.to_s }.join " "
@@ -33,10 +32,20 @@ class Board
   def eval= eval
     @guesses.last.num_of_blacks = eval[0]
     @guesses.last.num_of_whites = eval[1]
+    @guesses.last.evaluated = true
   end
 
   def current_guess
     @guesses.last
+  end
+
+  def evaluated_guesses
+    if @guesses.length == 0
+      return @guesses
+    end
+    last = @guesses.last.evaluated ? (@guesses.length) : (@guesses.length - 1)
+    last = 0 if last < 0
+    @guesses[0, last]
   end
 
 end
@@ -48,10 +57,12 @@ class Guess
 
   attr_accessor :code
   attr_accessor :num_of_blacks, :num_of_whites
+  attr_accessor :evaluated
 
   def initialize values
     @code = values
     @num_of_blacks, @num_of_whites = 0, 0
+    @evaluated = false
   end
 
   def to_s

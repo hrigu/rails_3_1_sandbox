@@ -1,8 +1,8 @@
 %ul
   %li
     code:
-    = game.mastermind.code
-    - game.mastermind.guesses.each do |guess|
+    = game.master.secret_code
+    - game.board.guesses.each do |guess|
       %li
         = guess
     %li

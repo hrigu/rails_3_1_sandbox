@@ -6,16 +6,22 @@
   = render "board"
   .left
     Bewertung
-  .right
-    = form_for :put, {url: mastermind_put_path }do |f|
+  = form_for :put, {url: mastermind_put_path }do |f|
+    .right
       .bank
+        - @game.board.current_guess.code.each do |color|
+          .cell{style: "background: #{color}", color: color}
+        .space
         - @game.board.num_of_elements.times do |i|
-          .cell.target{id: "pos_#{i}"}
+          .tinycell.target{id: "pos_#{i}"}
         .space
         - %w[black white].each do |color|
           .cell.draggable{style: "background-color: #{color}", color: color}
         - @game.board.num_of_elements.times do |s|
           = f.hidden_field(s.to_s, {size: 1})
+    .left
+      -
+    .right
       = f.submit "ok"
 
 = render "internal_infos"

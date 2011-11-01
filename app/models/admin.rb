@@ -16,7 +16,8 @@ class Admin
   def running
     result = []
     @game_instances.each do |key, value|
-      result << value if value.mastermind && ! value.solved
+      puts value
+      result << value if value && !value.solved
     end
     result
   end
