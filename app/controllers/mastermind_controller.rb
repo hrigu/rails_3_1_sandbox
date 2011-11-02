@@ -14,13 +14,13 @@ class MastermindController < ApplicationController
   def start_game
     game_spec = GameHolder.find_spec session[:game_id]
     if params[:game]
-#      begin
-    game_spec.choose params[:game]
-#      rescue => detail
-#        flash[:notice] = detail.message
-#        redirect_to mastermind_path
-#        return  #this is necessary, otherwise the flow goes further in this method
-#      end
+      begin
+        game_spec.choose params[:game]
+      rescue => detail
+        flash[:notice] = detail.message
+        redirect_to mastermind_path
+        return #this is necessary, otherwise the flow goes further in this method
+      end
     end
     @game = Game.new game_spec
 
@@ -34,23 +34,13 @@ class MastermindController < ApplicationController
     end
   end
 
-  #def enter_code
-  #  @game = GameHolder.find (session[:code])
-  #  @game.enter_code
-  #  respond_to do |format|
-  #    format.html { render "play_game" }
-  #  end
-  #
-  #end
-
   def put
     @game = GameHolder.find session[:game_id]
     if @game
-      @game.put build_guess(params[:put]) #if params[:guess]
       begin
-      rescue => detail
-        puts detail
-        flash[:notice] = "could not make a guess, because I don't have possible solutions any more'"
+        @game.put build_guess(params[:put]) #if params[:guess]
+      rescue MastermindError => detail
+        flash[:notice] = detail.message
       end
       next_page = "play_game"
       if @game.state == Game::SOLVED

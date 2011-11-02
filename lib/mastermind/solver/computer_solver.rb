@@ -32,23 +32,14 @@ class ComputerSolver
   end
 
   def reduce_solutions guess
-
     possible_solutions = @black_solver.find_solutions guess.code, guess.num_of_blacks
     possible_solutions = @white_solver.find_solutions guess.code, guess.num_of_whites, possible_solutions
     possible_solutions = @empty_positions_filler.fill_empty_positions(possible_solutions)
-
-
     @solution_disposer.add_solutions possible_solutions
     @solution_disposer.init_new_round
-
   end
 
   def possible_solutions
     @solution_disposer.possible_solutions.to_a.sort
   end
-
-
-  private
-
-
 end

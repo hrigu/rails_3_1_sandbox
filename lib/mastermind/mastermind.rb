@@ -28,3 +28,7 @@ class Mastermind
     end until master.solved
   end
 end
+
+class MastermindError < RuntimeError
+
+end
