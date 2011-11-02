@@ -24,6 +24,13 @@ class GameHolder
     $game_instances[id]
   end
 
+  def self.all
+    $game_instances
+  end
+
+  def self.delete_all
+    $game_instances = {}
+  end
 
   def self.delete id
     $game_instances.each do |key, value|

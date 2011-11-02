@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 
   def index
-    @admin = Admin.new $game_instances
+    @admin = Admin.new GameHolder.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -9,13 +9,13 @@ class AdminController < ApplicationController
   end
 
   def delete_game_instances
-    $game_instances = {}
+    GameHolder.delete_all
     GC.start
     redirect_to :admin
   end
   def delete_game
     id = params[:id].to_i
-    Game.delete(id)
+    GameHolder.delete(id)
 
     GC.start
     redirect_to :admin

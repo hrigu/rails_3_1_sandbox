@@ -19,6 +19,7 @@ class Game
   def initialize game_spec
 
     @game_spec = game_spec
+
     #only to load the classes...TODO: find better way
     Mastermind.new
 

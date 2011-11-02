@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list id="f7144581-9042-4d48-aee8-a64a01667a7d" name="Default" comment="" />
     <list default="true" id="1b5edda0-2804-4543-9163-9d931cc53942" name="not changed" comment="remove comments">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/mastermind/_back_link.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sandbox/exception_hierarchy.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rails_3_1_sandbox.iml" afterPath="$PROJECT_DIR$/.idea/rails_3_1_sandbox.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mastermind.scc.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mastermind.scc.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mastermind/evaluate.haml" afterPath="$PROJECT_DIR$/app/views/mastermind/evaluate.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mastermind/game_solved.html.haml" afterPath="$PROJECT_DIR$/app/views/mastermind/game_solved.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mastermind/play_game.haml" afterPath="$PROJECT_DIR$/app/views/mastermind/play_game.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mastermind/mastermind.rb" afterPath="$PROJECT_DIR$/lib/mastermind/mastermind.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mastermind/solver/computer_solver.rb" afterPath="$PROJECT_DIR$/lib/mastermind/solver/computer_solver.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb" afterPath="$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/admin.rb" afterPath="$PROJECT_DIR$/app/models/admin.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game.rb" afterPath="$PROJECT_DIR$/app/models/game.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game_holder.rb" afterPath="$PROJECT_DIR$/app/models/game_holder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/index.html.haml" afterPath="$PROJECT_DIR$/app/views/admin/index.html.haml" />
     </list>
     <ignored path="rails_3_1_sandbox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,52 +33,61 @@
       <file leaf-file-name="admin_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guess_strategy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb">
+      <file leaf-file-name="admin.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="22" column="5" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mastermind_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/mastermind_controller.rb">
+      <file leaf-file-name="_game.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/_game.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_strategy.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/game_strategy.rb">
+      <file leaf-file-name="index.html.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="0" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.33333334">
+            <state line="15" column="43" selection-start="345" selection-end="345" vertical-scroll-proportion="0.67509025">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="white_solver.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/mastermind/solver/white_solver.rb">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="14" selection-end="59" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exception_hierarchy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sandbox/exception_hierarchy.rb">
+      <file leaf-file-name="game.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="41" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_holder.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/game_holder.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="24" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,11 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/mastermind/_board.html.haml" />
-        <option value="$PROJECT_DIR$/lib/mastermind/board/board.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/_game.html.haml" />
-        <option value="$PROJECT_DIR$/app/models/admin.rb" />
-        <option value="$PROJECT_DIR$/app/views/mastermind/add_secret_code.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/mastermind.scc.scss" />
         <option value="$PROJECT_DIR$/app/views/mastermind/_back_link.haml" />
         <option value="$PROJECT_DIR$/app/views/mastermind/game_solved.html.haml" />
@@ -121,6 +118,11 @@
         <option value="$PROJECT_DIR$/lib/mastermind/mastermind.rb" />
         <option value="$PROJECT_DIR$/lib/mastermind/solver/guess_strategy.rb" />
         <option value="$PROJECT_DIR$/app/controllers/mastermind_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/admin_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/game_holder.rb" />
+        <option value="$PROJECT_DIR$/app/models/game.rb" />
+        <option value="$PROJECT_DIR$/app/models/admin.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/index.html.haml" />
       </list>
     </option>
   </component>
@@ -571,20 +573,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -604,28 +592,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rails_3_1_sandbox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="solver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,6 +606,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mastermind" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -658,6 +672,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_3_1_sandbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1244,8 +1272,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43153527" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2676259" sideWeight="0.7330567" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30647483" sideWeight="0.76625174" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23374827" sideWeight="0.9992918" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30647483" sideWeight="0.45643154" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5435685" sideWeight="0.9992918" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2669433" sideWeight="0.99858356" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1335,65 +1363,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spec/lib/mastermind/solver/empty_position_filler_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.2625251">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/factories/posts.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mastermind.scc.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="17" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/mastermind/_back_link.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/mastermind/game_solved.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="29" selection-start="180" selection-end="209" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/mastermind/play_game.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/mastermind/evaluate.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="29" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1442,7 +1414,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/game_strategy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.33333334">
+        <state line="117" column="0" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game_holder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="24" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/_game.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="43" selection-start="345" selection-end="345" vertical-scroll-proportion="0.67509025">
           <folding />
         </state>
       </provider>

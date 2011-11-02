@@ -7,25 +7,17 @@ class Admin
 
   def solved
     result = []
-    @game_instances.each do |key, value|
-      result << value if value.solved
+    @game_instances.each do |key, game|
+      result << game if game.solved
     end
     result
   end
 
   def running
     result = []
-    @game_instances.each do |key, value|
-      puts value
-      result << value if value && !value.solved
-    end
-    result
-  end
-
-  def not_started
-    result = []
-    @game_instances.each do |key, value|
-      result << value unless value.mastermind
+    @game_instances.each do |key, game|
+      puts game
+      result << game if game && !game.solved
     end
     result
   end
