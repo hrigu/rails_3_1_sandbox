@@ -8,8 +8,8 @@ class GameSpecification
   def initialize map = nil
 
     @player_values = %w[Computer Mensch]
-    @code_sizes = %w[1 2 3 4 5 6]
-    @color_sizes = %w[1 2 3 4 5 6 7 8]
+    @code_sizes = %w[1 2 3 4]
+    @color_sizes = %w[1 2 3 4 5 6]
     map ||= {master: "Computer", solver: "Mensch", size_of_code: 4, num_of_colors: 6}
     choose map
 
