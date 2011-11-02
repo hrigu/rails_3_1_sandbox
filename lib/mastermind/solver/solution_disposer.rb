@@ -65,6 +65,16 @@ class SolutionDisposer
     @current_possible_solutions.size
   end
 
+  def solutions_to_s
+      s = ""
+      @possible_solutions.to_a.sort.each do |solution|
+        sol = solution.collect { |c| c.to_s }.join " "
+        s << "[" << sol << "]
+"
+      end
+    s
+  end
+
 
   private
 

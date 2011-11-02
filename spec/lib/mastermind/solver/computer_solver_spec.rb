@@ -52,7 +52,28 @@ describe "Compute the possible Solutions" do
     end
   end
 end
+describe "Reduce the possible solutions. Initialized with 2 Colors" do
+  describe "and 3 positions" do
+    before(:each) do
+      @solver = ComputerSolver.new %w[a b], 3
+      @solver.possible_solutions.size.should == 8
+    end
+    context "2 black" do
+      context "guess is [a a b] and bewertung is [2,0]" do
+        it "should be" do
 
+          guess = Guess.new %w[a a b]
+          guess.num_of_blacks = 2
+          @solver.possible_solutions.should include %w[a a a]
+          @solver.reduce_solutions guess
+          @solver.possible_solutions.should include %w[a a a]
+        end
+      end
+
+    end
+
+  end
+end
 describe "Reduce the possible solutions. Initialized with 3 colors" do
   describe "and 2 positions" do
 
@@ -186,9 +207,10 @@ describe "Reduce the possible solutions. Initialized with 6 colors and 4 positio
       guess.num_of_blacks = 2
       guess.num_of_whites = 0
       @solver.reduce_solutions guess
-      @solver.possible_solutions.size.should == 98
+      @solver.possible_solutions.size.should == 105
       #stichprobe
       @solver.possible_solutions.should include %w[b a c f]
+      @solver.possible_solutions.should include %w[b b b b]
       @solver.possible_solutions.should include %w[b b e e]
       @solver.possible_solutions.should_not include %w[a b c d]
     end

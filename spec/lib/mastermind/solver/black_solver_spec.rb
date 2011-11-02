@@ -34,6 +34,16 @@ describe BlackSolver do
       end
     end
   end
+  context "3 positions, guess = [a a b]" do
+    context "2 black" do
+      it "should get four solutions" do
+      black_solver = BlackSolver.new
+      solutions = black_solver.find_solutions %w[a a b], 2
+
+      puts solutions
+      end
+    end
+  end
   context "four positions, guess = [a b c d]" do
     context "one black" do
       it "should get four solutions" do

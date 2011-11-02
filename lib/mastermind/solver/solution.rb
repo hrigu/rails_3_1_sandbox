@@ -52,11 +52,12 @@ class Solution
   def add_not_used_colors_to_the_not_possible_colors guess
     #not_used_colors = guess - code.compact
     not_used_colors = []
-    solution_colors = code.compact
+    colors_of_solution = code.compact
     guess_color = Array.new guess
 
     guess_color.each do |gc|
-      not_used_colors << gc unless solution_colors.delete gc
+      used_color = colors_of_solution.delete_at colors_of_solution.index(gc) unless colors_of_solution.index(gc).nil?
+      not_used_colors << gc if used_color.nil?
     end
 
 
@@ -70,6 +71,7 @@ class Solution
       end
     end
   end
+
 
   def inspect
     "#{code.inspect} - #{not_possible_colors.inspect}"
