@@ -1,0 +1,52 @@
+
+#header
+{
+	position: absolute;
+	top: 0;
+	left: 240px;
+	width: 100%;
+	height: 50px;
+	overflow:hidden;
+	background: #693;
+	border-right:1px solid #5C8A2E;
+    padding-left: 10px;
+	color: #FFF;
+}
+
+#leftcont
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+	height: 100%;
+	overflow:hidden;
+	background: #693;
+	border-right:1px solid #693;
+
+     img
+     {
+    	//margin-left: 20px;
+	    margin-top: 50px;
+     }
+
+}
+
+
+#main
+{
+	width: auto; /* or you can set a specific width like - width: 610px; */
+	margin-left: 245px;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+
+#footer
+{
+	clear: both;
+	border-top: 1px solid #CCC;
+	padding: 15px 0;
+	font-size: 10px;
+	text-align: right;
+}
