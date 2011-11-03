@@ -16,14 +16,13 @@ class MastermindController < ApplicationController
     if params[:game]
       begin
         game_spec.choose params[:game]
-      rescue => detail
+        @game = Game.new game_spec
+      rescue MastermindError => detail
         flash[:notice] = detail.message
         redirect_to mastermind_path
         return #this is necessary, otherwise the flow goes further in this method
       end
     end
-    @game = Game.new game_spec
-
     page = "play_game"
     if @game.state == Game::WAIT_FOR_SECRET_CODE
       page = "add_secret_code"

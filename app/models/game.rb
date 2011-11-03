@@ -2,6 +2,10 @@ require File.dirname(__FILE__) + '/game_strategy'
 
 class Game
 
+  #only to load the classes...TODO: find better way
+  Mastermind.new
+
+
   COMPUTER_MENSCH = "Computer-Mensch"
   COMPUTER_COMPUTER = "Computer-Computer"
   MENSCH_COMPUTER = "Mensch-Computer"
@@ -20,10 +24,6 @@ class Game
 
     @game_spec = game_spec
 
-    #only to load the classes...TODO: find better way
-    Mastermind.new
-
-
     if game_spec.master == "Computer"
       if game_spec.solver == "Mensch"
         @strategy = ComputerAgainstHumanStrategy.new game_spec, COMPUTER_MENSCH
@@ -32,7 +32,7 @@ class Game
       end
     else
       if game_spec.solver == "Mensch"
-        raise "Mensch vs Mensch nicht implementiert. Holt euch ein Mastermind aus der Ding-Welt!"
+        raise MastermindError, "Mensch vs Mensch nicht implementiert. Holt euch ein Mastermind aus der Ding-Welt!"
       else
         @strategy = HumanAgainstComputerStrategy.new game_spec, MENSCH_COMPUTER
       end
