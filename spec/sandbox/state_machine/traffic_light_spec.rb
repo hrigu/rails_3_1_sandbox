@@ -1,5 +1,5 @@
-require File.expand_path(Rails.root) + '/sandbox/state_machine/state_example'
 require "spec_helper"
+require File.expand_path(Rails.root) + '/sandbox/state_machine/traffic_light'
 
 describe TrafficLight do
 
