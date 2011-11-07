@@ -6,7 +6,6 @@ describe "Using should: " do
 
     before do
       @true = true
-      puts @true.class
     end
 
     it "should be true" do
