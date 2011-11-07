@@ -1,4 +1,4 @@
-class Mastermind
+class MastermindAsStateMachine
 
   attr_reader :secret_code, :current_guess, :current_evaluation
 
@@ -18,6 +18,14 @@ class Mastermind
 
     event :cracked do
       transition :wait_for_evaluation => :finished
+    end
+
+    event :cancel do
+      transition all - [:start, :finished] => :start
+    end
+
+    event :new_game do
+      transition :finished => :start
     end
 
     state :start do
