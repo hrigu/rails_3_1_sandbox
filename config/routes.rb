@@ -9,11 +9,7 @@ Rails31Sandbox::Application.routes.draw do
   match 'admin' => 'admin#index'
   match 'admin/delete_game_instances' => 'admin#delete_game_instances'
   match 'admin/delete_game' => 'admin#delete_game'
-
- match 'statemachine' => 'statemachine#index'
-  get "statemachine/start"
-  get "statemachine/stop"
-  get "statemachine/force"
+  match 'statemachine' => 'statemachine#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

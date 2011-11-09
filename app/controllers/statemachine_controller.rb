@@ -16,27 +16,15 @@ class StatemachineController < ApplicationController
   end
 
   def index
-    @plane = Plane.new
-    StatemachineController.add_plane @plane
-    session[:plane_id] = @plane.id
-    render_page
-  end
-
-  def start
-    find
-    @plane.start
-    render_page
-  end
-
-  def stop
-    find
-    @plane.stop
-    render_page
-  end
-
-  def force
-    find
-    @plane.force
+    event = params[:event]
+    if event
+      find
+      @plane.send event
+    else
+      @plane = Plane.new
+      StatemachineController.add_plane @plane
+      session[:plane_id] = @plane.id
+    end
     render_page
   end
 

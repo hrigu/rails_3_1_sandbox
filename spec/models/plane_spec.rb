@@ -10,8 +10,10 @@ describe Plane do
     subject.stop
     subject.state_name.should == :parked
     subject.start
-    subject.force
+    subject.accelerate
     subject.state_name.should == :flying
+    subject.sinking
+    subject.state_name.should == :rolling
     subject.stop
     subject.state_name.should == :parked
 
