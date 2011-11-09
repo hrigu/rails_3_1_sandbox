@@ -1,0 +1,11 @@
+- content_for :title do
+  Statemachine
+
+#notice
+  Plane
+  = @plane.state_name
+  %br
+  - links.each do |link|
+    = link_to link[:name], link[:path]
+    %br
+
