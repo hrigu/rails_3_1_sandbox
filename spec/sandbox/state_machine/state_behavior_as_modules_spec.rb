@@ -1,7 +1,7 @@
 require "rspec"
 require 'state_machine'
 
-module StartState
+module IdleState
   def start
     puts "start"
     super
@@ -25,7 +25,7 @@ class StateAsClasses
       transition :running => :idle
     end
     state :idle do
-      include StartState
+      include IdleState
     end
     state :running do
       include RunningState
