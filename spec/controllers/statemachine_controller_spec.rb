@@ -6,27 +6,18 @@ describe StatemachineController do
     it "returns http success" do
       get 'index'
       response.should be_success
+      assigns(:plane).state.should eq("parked")
     end
   end
 
-  describe "GET 'start'" do
-    it "returns http success" do
-      get 'start'
-      response.should be_success
+  describe "GET 'index' with 'start'" do
+    before :each do
+      get 'index' #to initialize a new game
     end
-  end
-
-  describe "GET 'stop'" do
-    it "returns http success" do
-      get 'stop'
+    it "turns the plane to rolling" do
+      get 'index', :event => "start"
       response.should be_success
-    end
-  end
-
-  describe "GET 'fly'" do
-    it "returns http success" do
-      get 'fly'
-      response.should be_success
+      assigns(:plane).state.should eq("rolling")
     end
   end
 
