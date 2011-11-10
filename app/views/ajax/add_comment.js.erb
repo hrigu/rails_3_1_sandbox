@@ -1,3 +1,4 @@
-$('#messages').append("<%=@message%><br/>" );
+$('#messages').append("<%= escape_javascript(render("message"))%>");
+
 
 
