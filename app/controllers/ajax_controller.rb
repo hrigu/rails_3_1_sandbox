@@ -11,9 +11,8 @@ class AjaxController < ApplicationController
 
   end
 
-  def invoke
-    p params[:put]
-    @message = params[:put][:message]
+  def add_comment
+    @message = params[:comment][:message]
     respond_to do |format|
       format.html { render }
       format.js
