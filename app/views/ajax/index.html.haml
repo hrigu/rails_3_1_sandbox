@@ -1,0 +1,14 @@
+- content_for :title do
+  ajax...
+  -#remote => true :ajax call!
+= form_for :put, {:remote => true, url: ajax_invoke_path }do |f|
+  = f.label("message", "Message:")
+  = f.text_field("message")
+  %br
+  = f.submit "ok"
+  %br
+  =link_to 'clear', ajax_clear_path, :remote=>true
+
+#messages
+
+

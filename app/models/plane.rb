@@ -7,7 +7,6 @@ class Plane
       transition :parked => :rolling
     end
 
-
     event :stop do
       transition :rolling => :parked
       transition :flying => :crashed

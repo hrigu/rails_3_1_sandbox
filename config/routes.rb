@@ -1,5 +1,10 @@
 Rails31Sandbox::Application.routes.draw do
 
+  get "ajax/index"
+  get "ajax/clear"
+  post "ajax/invoke"
+  match "ajax" => 'ajax#index'
+
   resources :posts
   root to:'home#index'
 
@@ -9,6 +14,7 @@ Rails31Sandbox::Application.routes.draw do
   match 'admin' => 'admin#index'
   match 'admin/delete_game_instances' => 'admin#delete_game_instances'
   match 'admin/delete_game' => 'admin#delete_game'
+
   match 'statemachine' => 'statemachine#index'
 
   # The priority is based upon order of creation:
