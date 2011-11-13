@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-clear_helpers
   ##
   #  layout: see  doc/guides/layouts_and_rendering: see 2.2.12 Finding Layouts
   # by default, the layout is views/layouts/<ControllerName>.
