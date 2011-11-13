@@ -2,6 +2,8 @@ Rails31Sandbox::Application.routes.draw do
 
   get "ajax/index"
   get "ajax/clear"
+  get "ajax/json_data"
+
   post "ajax/add_comment"
   match "ajax" => 'ajax#index'
 

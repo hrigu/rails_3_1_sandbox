@@ -6,9 +6,18 @@
   = f.text_field("message")
   %br
   = f.submit "ok"
-  %br
-  =link_to 'clear', ajax_clear_path, :remote=>true
+%br
+=link_to 'clear', ajax_clear_path, :remote=>true
 
 #messages
+%br
+%br
+
+
+%a{href: "#" ,id: "getdata-button"}
+  Get JSON Data
+
+#showdata
+
 
 

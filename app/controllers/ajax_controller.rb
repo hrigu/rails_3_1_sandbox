@@ -6,7 +6,7 @@ class AjaxController < ApplicationController
 
   def clear
     respond_to do |format|
-      format.js   {render }
+      format.js { render }
     end
 
   end
@@ -17,7 +17,24 @@ class AjaxController < ApplicationController
       format.html { render }
       format.js
     end
-
   end
 
+  def json_data
+    respond_to do |format|
+      format.json do
+        @example = Example.new("Piotr", 99);
+        x = render json: @example
+        puts x
+        x
+      end
+    end
+  end
+
+end
+
+class Example
+  attr_accessor :name, :age
+  def initialize name, age
+    @name, @age = name, age
+  end
 end
