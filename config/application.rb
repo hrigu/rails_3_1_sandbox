@@ -46,12 +46,18 @@ module Rails31Sandbox
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Only the helper for the current view is loaded. See http://stackoverflow.com/questions/1179865/why-are-all-rails-helpers-available-to-all-views-all-the-time-is-there-a-way-t
+    config.action_controller.include_all_helpers = false
+
+
     config.generators do |g|
       g.test_framework :rspec, :fixture => false
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       g.form_builder :simple_form
       g.template_engine :haml
     end
+
+
 
 
   end
