@@ -1,4 +1,9 @@
 module StatemachineHelper
+
+  def picture_url
+    "/assets/statemachine.png"
+  end
+
   def links
 
     links = []
