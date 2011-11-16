@@ -3,7 +3,7 @@
 - content_for :title do
   ajax...
   -#remote => true :ajax call!
-= form_for :comment, {:remote => true, url: ajax_add_comment_path }do |f|
+= form_for :comment, {remote: true, url: ajax_add_comment_path }do |f|
   = f.label("message", "Message:")
   = f.text_field("message")
   %br
@@ -18,7 +18,9 @@
 %br
 
 #world
-  .place
+  .place{id: 1, style: "left: 12px; top:2px;"}
+  .place{id: 2, style: "left: 52px; top:40px;"}
+  .place{id: 3, style: "left: 62px; top:60px;"}
 
 %br
 

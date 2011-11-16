@@ -21,9 +21,8 @@ class AjaxController < ApplicationController
 
   def post_data
     position = params[:position]
-    p position
     respond_to do |format|
-      format.text {render text: "top is #{position[:top]}, left is #{position[:left]}"}
+      format.text {render text: "id: #{id}, top is #{position[:top]}, left is #{position[:left]}"}
     end
   end
 

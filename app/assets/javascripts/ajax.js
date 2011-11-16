@@ -8,15 +8,10 @@ $(document).ready(function() {
         });
     });
 
-    $('.place').ajaxSend(function(event, request, settings) {
-        alert("ajaxSend: " + settings.url);
-        settings.data = (settings.data ? settings.data + "&" : "")
-            + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
-    });
     $(".place").draggable({
         containment: 'parent',
         stop: function(event, ui) {
-            $.post("ajax/post_data", { position: ui.position},
+            $.post("ajax/post_data", { id: this.id, position: ui.position, authenticity_token: AUTH_TOKEN},
                 function(data) {
                     alert("Data Loaded: " + data);
                 });
