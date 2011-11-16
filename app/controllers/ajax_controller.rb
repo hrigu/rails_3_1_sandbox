@@ -23,7 +23,7 @@ class AjaxController < ApplicationController
     position = params[:position]
     p position
     respond_to do |format|
-      format.text {render text: "top is #{position[:top]}"}
+      format.text {render text: "top is #{position[:top]}, left is #{position[:left]}"}
     end
   end
 

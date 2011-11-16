@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     //attach a jQuery live event to the button
     $('#getdata-button').live('click', function() {
         //on click: fetch the json data and show it in the shodata element
@@ -7,6 +8,11 @@ $(document).ready(function() {
         });
     });
 
+    $('.place').ajaxSend(function(event, request, settings) {
+        alert("ajaxSend: " + settings.url);
+        settings.data = (settings.data ? settings.data + "&" : "")
+            + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
+    });
     $(".place").draggable({
         containment: 'parent',
         stop: function(event, ui) {
