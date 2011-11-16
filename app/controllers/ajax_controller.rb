@@ -19,6 +19,14 @@ class AjaxController < ApplicationController
     end
   end
 
+  def post_data
+    position = params[:position]
+    p position
+    respond_to do |format|
+      format.text {render text: "top is #{position[:top]}"}
+    end
+  end
+
   def json_data
     respond_to do |format|
       format.json do
