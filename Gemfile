@@ -42,7 +42,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', "~> 2.4"
   gem 'rcov'
-  gem 'spork', '~> 0.9.0.rc'
+  #gem 'spork', '~> 0.9.0.rc' for ruby 1.9.3 not necessary any more
   gem 'watchr'
 end
 
@@ -65,4 +65,4 @@ gem 'therubyracer'
 
 
 # for generate doc
-gem "RedCloth"
+#gem "RedCloth"
