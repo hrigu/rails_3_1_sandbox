@@ -30,6 +30,8 @@ end
 # gem 'ruby-debug-base19x'
 # gem 'ruby-debug-ide19'
 
+gem 'nested_scaffold'
+
 gem 'state_machine'
 gem 'ruby-graphviz' #optional, only required for graphing
 
