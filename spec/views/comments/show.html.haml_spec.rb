@@ -1,8 +1,12 @@
 require 'spec_helper'
 
-describe "post/1/comments/show.html.haml" do
+describe "comments/show.html.haml" do
   before(:each) do
-    @post_comment = assign(:post_comment, stub_model(Post::Comment,
+    @post = assign(:post, stub_model(Post,
+      :title => "myPost",
+      :body => "hihi"
+    ))
+    @comment = assign(:comment, stub_model(Comment,
       :name => "Name",
       :content => "MyText"
     ))
@@ -10,9 +14,7 @@ describe "post/1/comments/show.html.haml" do
 
   it "renders attributes in <p>" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/MyText/)
   end
 end

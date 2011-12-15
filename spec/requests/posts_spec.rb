@@ -6,10 +6,10 @@ describe "Posts" do
       @post = FactoryGirl.create(:post)
 
       #capybara
-      #visit posts_path
-      save_and_open_page
+      visit posts_path
+      #save_and_open_page
       page.should have_content "rails is great"
-     #visit posts_path
+     #get posts_path
      # @response.status.should be(200)
      # @response.body.should include "rails is great"
 
