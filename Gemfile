@@ -46,6 +46,7 @@ group :test, :development do
   gem 'rcov'
   #gem 'spork', '~> 0.9.0.rc' for ruby 1.9.3 not necessary any more
   gem 'watchr'
+  gem 'launchy' #save_and_open_page
 end
 
 group :test do

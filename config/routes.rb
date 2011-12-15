@@ -1,5 +1,7 @@
 Rails31Sandbox::Application.routes.draw do
 
+
+
   get "ajax/index"
   get "ajax/clear"
   get "ajax/json_data"
@@ -8,7 +10,9 @@ Rails31Sandbox::Application.routes.draw do
   post "ajax/post_data"
   match "ajax" => 'ajax#index'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   root to:'home#index'
 
   match 'mastermind' => 'mastermind#index'
